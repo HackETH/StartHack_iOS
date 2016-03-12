@@ -8,6 +8,8 @@
 
 #import "TranslatorMainViewController.h"
 #import "LanguagePickerTableViewController.h"
+#import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @interface TranslatorMainViewController ()
 
@@ -19,7 +21,16 @@
     [super viewDidLoad];
     [self.navigationItem setHidesBackButton:YES];
 
-    
+    [[(AppDelegate *)[[UIApplication sharedApplication] delegate] oneSignal]  IdsAvailable:^(NSString* userId, NSString* pushToken) {
+        PFUser *user = [PFUser currentUser];
+        
+        if (![user[@"pushID"] isEqualToString:userId]) {
+            user[@"pushID"] = userId;
+            [user saveInBackground];
+        }
+        
+        
+    }];
     // Do any additional setup after loading the view.
 }
 

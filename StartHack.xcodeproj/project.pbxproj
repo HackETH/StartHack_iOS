@@ -21,6 +21,11 @@
 		D03498C91C93AD59005190C1 /* StandardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D03498C81C93AD59005190C1 /* StandardTableViewCell.m */; };
 		D03498CC1C93AD81005190C1 /* LanguagePickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03498CB1C93AD81005190C1 /* LanguagePickerTableViewController.m */; };
 		D0E88E491C93C59300EC0FAF /* TranslatorMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E88E481C93C59300EC0FAF /* TranslatorMainViewController.m */; };
+		D0E88E4C1C93FFB800EC0FAF /* UserMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E88E4B1C93FFB800EC0FAF /* UserMainViewController.m */; };
+		D0E88E4F1C94318D00EC0FAF /* UserSelectLanguageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E88E4E1C94318D00EC0FAF /* UserSelectLanguageTableViewController.m */; };
+		D0E88E521C94443100EC0FAF /* SearchingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E88E511C94443100EC0FAF /* SearchingViewController.m */; };
+		D0E88E551C94524800EC0FAF /* AcceptCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E88E541C94524800EC0FAF /* AcceptCallViewController.m */; };
+		D0E88E581C94688E00EC0FAF /* ConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E88E571C94688E00EC0FAF /* ConversationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,16 @@
 		D03498CB1C93AD81005190C1 /* LanguagePickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguagePickerTableViewController.m; sourceTree = "<group>"; };
 		D0E88E471C93C59300EC0FAF /* TranslatorMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslatorMainViewController.h; sourceTree = "<group>"; };
 		D0E88E481C93C59300EC0FAF /* TranslatorMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslatorMainViewController.m; sourceTree = "<group>"; };
+		D0E88E4A1C93FFB800EC0FAF /* UserMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMainViewController.h; sourceTree = "<group>"; };
+		D0E88E4B1C93FFB800EC0FAF /* UserMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMainViewController.m; sourceTree = "<group>"; };
+		D0E88E4D1C94318D00EC0FAF /* UserSelectLanguageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSelectLanguageTableViewController.h; sourceTree = "<group>"; };
+		D0E88E4E1C94318D00EC0FAF /* UserSelectLanguageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSelectLanguageTableViewController.m; sourceTree = "<group>"; };
+		D0E88E501C94443100EC0FAF /* SearchingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchingViewController.h; sourceTree = "<group>"; };
+		D0E88E511C94443100EC0FAF /* SearchingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchingViewController.m; sourceTree = "<group>"; };
+		D0E88E531C94524800EC0FAF /* AcceptCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcceptCallViewController.h; sourceTree = "<group>"; };
+		D0E88E541C94524800EC0FAF /* AcceptCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcceptCallViewController.m; sourceTree = "<group>"; };
+		D0E88E561C94688E00EC0FAF /* ConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationViewController.h; sourceTree = "<group>"; };
+		D0E88E571C94688E00EC0FAF /* ConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationViewController.m; sourceTree = "<group>"; };
 		FD270E1C68FD4521B9BE2D5C /* Pods-StartHack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StartHack/Pods-StartHack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +165,16 @@
 				D018FB7E1C9397200028DCE6 /* Main.storyboard */,
 				D0E88E471C93C59300EC0FAF /* TranslatorMainViewController.h */,
 				D0E88E481C93C59300EC0FAF /* TranslatorMainViewController.m */,
+				D0E88E4A1C93FFB800EC0FAF /* UserMainViewController.h */,
+				D0E88E4B1C93FFB800EC0FAF /* UserMainViewController.m */,
+				D0E88E501C94443100EC0FAF /* SearchingViewController.h */,
+				D0E88E511C94443100EC0FAF /* SearchingViewController.m */,
+				D0E88E4D1C94318D00EC0FAF /* UserSelectLanguageTableViewController.h */,
+				D0E88E4E1C94318D00EC0FAF /* UserSelectLanguageTableViewController.m */,
+				D0E88E531C94524800EC0FAF /* AcceptCallViewController.h */,
+				D0E88E541C94524800EC0FAF /* AcceptCallViewController.m */,
+				D0E88E561C94688E00EC0FAF /* ConversationViewController.h */,
+				D0E88E571C94688E00EC0FAF /* ConversationViewController.m */,
 				D018FBAF1C93AA4D0028DCE6 /* languages.plist */,
 				D018FB811C9397200028DCE6 /* Assets.xcassets */,
 				D018FB831C9397200028DCE6 /* LaunchScreen.storyboard */,
@@ -370,12 +395,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0E88E551C94524800EC0FAF /* AcceptCallViewController.m in Sources */,
 				D018FB7D1C9397200028DCE6 /* ViewController.m in Sources */,
 				D03498CC1C93AD81005190C1 /* LanguagePickerTableViewController.m in Sources */,
 				D03498C91C93AD59005190C1 /* StandardTableViewCell.m in Sources */,
+				D0E88E521C94443100EC0FAF /* SearchingViewController.m in Sources */,
 				D018FB7A1C9397200028DCE6 /* AppDelegate.m in Sources */,
 				D018FBAE1C93A4650028DCE6 /* SelectTypeViewController.m in Sources */,
+				D0E88E4F1C94318D00EC0FAF /* UserSelectLanguageTableViewController.m in Sources */,
 				D0E88E491C93C59300EC0FAF /* TranslatorMainViewController.m in Sources */,
+				D0E88E581C94688E00EC0FAF /* ConversationViewController.m in Sources */,
+				D0E88E4C1C93FFB800EC0FAF /* UserMainViewController.m in Sources */,
 				D018FB771C9397200028DCE6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,37 +1,29 @@
 //
-//  LanguagePickerTableViewController.m
+//  UserSelectLanguageTableViewController.m
 //  StartHack
 //
 //  Created by Peter Müller on 12/03/16.
 //  Copyright © 2016 Müller & Müller. All rights reserved.
 //
 
-#import "LanguagePickerTableViewController.h"
+#import "UserSelectLanguageTableViewController.h"
 #import "StandardTableViewCell.h"
+#import "UserMainViewController.h"
 #import <Parse/Parse.h>
-#import "TranslatorMainViewController.h"
 
-@interface LanguagePickerTableViewController ()
+@interface UserSelectLanguageTableViewController ()
 
 @property NSMutableArray *languages;
 
-
 @end
 
-@implementation LanguagePickerTableViewController
+@implementation UserSelectLanguageTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    PFUser *user = [PFUser currentUser];
-    
-    if (user[@"languagesData"]) {
-        self.languages = user[@"languagesData"];
-    }
-    else {
-        NSString *path = [[NSBundle mainBundle]pathForResource:@"languages" ofType:@"plist"];
-        self.languages = [[NSMutableArray alloc]initWithContentsOfFile:path];
-    }
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"languages" ofType:@"plist"];
+    self.languages = [[NSMutableArray alloc]initWithContentsOfFile:path];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -50,40 +42,9 @@
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
 }
 - (IBAction)backButton:(id)sender {
-        [[self navigationController] setNavigationBarHidden:YES animated:NO];
-       [self.navigationController popViewControllerAnimated:YES];
-}
-- (IBAction)nextButton:(id)sender {
-    PFUser *user = [PFUser currentUser];
-    NSMutableArray *userLanguages = [[NSMutableArray alloc] init];
-    for (NSDictionary *language in self.languages) {
-        if([language[@"selected"] isEqualToString:@"yes"]) {
-            [userLanguages addObject:language[@"language_name"]];
-        }
-    }
     
-    if (user[@"languages"]) {
-        user[@"languages"] = userLanguages;
-        user[@"languagesData"] = self.languages;
-        [user saveInBackground];
-        [[self navigationController] setNavigationBarHidden:YES animated:NO];
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-    else {
-    user[@"languages"] = userLanguages;
-    user[@"languagesData"] = self.languages;
-    [user saveInBackground];
-    
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
-                                                         bundle:nil];
-    TranslatorMainViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"TranslatorMain"];
-    
-    
-    [add setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-    
-    [self.navigationController pushViewController:add animated:YES];
-        
-    }
+    [[self navigationController] setNavigationBarHidden:YES animated:NO];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Table view data source
@@ -96,20 +57,10 @@
     return self.languages.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     StandardTableViewCell*cell = [tableView dequeueReusableCellWithIdentifier: @"StandardCell" forIndexPath:indexPath];
     
     NSMutableDictionary *language = self.languages[indexPath.row];
-    if (language[@"selected"]==nil) {
-        [language setObject:@"no" forKey:@"selected"];
-        self.languages[indexPath.row] = language;
-    }
-    
-    if ([language[@"selected"] isEqualToString:@"no"]) {
-        cell.languageSelectedImage.image = [UIImage imageNamed:@"unchecked"];
-    }
-    else cell.languageSelectedImage.image = [UIImage imageNamed:@"checked"];
     
     cell.englishLanguageLabel.text = language[@"language_name"];
     cell.languageLabel.text = language[@"native_name"];
@@ -122,18 +73,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     NSMutableDictionary *language = self.languages[indexPath.row];
+    NSMutableDictionary *language = self.languages[indexPath.row];
+  
+    PFUser *user = [PFUser currentUser];
+    if (self.isFirst) user[@"firstLanguage"] = language[@"language_name"];
+    else user[@"secondLanguage"] = language[@"language_name"];
     
-    if ([language[@"selected"] isEqualToString:@"no"]) {
-        language[@"selected"] = @"yes";
-    }
-    else language[@"selected"] = @"no";
-    
-    self.languages[indexPath.row] = language;
-    
-    [self.tableView reloadData];
-
-
+    [[self navigationController] setNavigationBarHidden:YES animated:NO];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

@@ -9,6 +9,8 @@
 #import "SelectTypeViewController.h"
 #import "LanguagePickerTableViewController.h"
 #import <Parse/Parse.h>
+#import "UserMainViewController.h"
+
 
 @interface SelectTypeViewController ()
 
@@ -50,6 +52,16 @@
     PFUser *user = [PFUser currentUser];
     user[@"type"] = @"user";
     [user saveInBackground];
+    
+    [[self navigationController] setNavigationBarHidden:YES animated:NO];
+    
+    
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                         bundle:nil];
+    UserMainViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"UserMain"];
+    
+    
+    [self.navigationController pushViewController:add animated:YES];
 }
 
 /*

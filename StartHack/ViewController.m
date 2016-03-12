@@ -12,6 +12,7 @@
 #import "SelectTypeViewController.h"
 #import "LanguagePickerTableViewController.h"
 #import "TranslatorMainViewController.h"
+#import "UserMainViewController.h"
 
 @interface ViewController ()
 
@@ -76,7 +77,7 @@
             
             UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
                                                                  bundle:nil];
-            SelectTypeViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"selectType"];
+            UserMainViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"UserMain"];
             
             
             [self.navigationController pushViewController:add animated:NO];
