@@ -10,6 +10,7 @@
 
 @interface AcceptCallViewController : UIViewController
 
+@property (nonatomic, strong) NSString *inviteeIdentity;
 @property NSString *conversationId;
 @property NSString *twilioId;
 

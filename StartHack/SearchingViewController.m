@@ -37,77 +37,76 @@
     
     [super viewDidAppear:animated];
     
+    
+    
+    [self listenForInvites];
+    
+    
+}
+
+- (void)listenForInvites {
+    /* TWCLogLevelDisabled, TWCLogLevelError, TWCLogLevelWarning, TWCLogLevelInfo, TWCLogLevelDebug, TWCLogLevelVerbose  */
+    [TwilioConversationsClient setLogLevel:TWCLogLevelError];
+    
+    if (!self.conversationsClient) {
+        
+      
+        [self retrieveAccessTokenfromServer];
+    }
+}
+
+-(void) retrieveAccessTokenfromServer {
     PFUser *user = [PFUser currentUser];
-    
-    
-    
-    
-    // Token server endpoint URL
-    NSString *urlString = @"http://murmuring-everglades-87090.herokuapp.com/token.php";
-    
+    NSString *identifierForVendor = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSString *tokenEndpoint = @"http://murmuring-everglades-87090.herokuapp.com/token.php";
+    NSString *urlString = [NSString stringWithFormat:tokenEndpoint, identifierForVendor];
     // Make JSON request to server
     NSData *jsonResponse = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
-    NSError *jsonError;
-    NSDictionary *tokenResponse = [NSJSONSerialization JSONObjectWithData:jsonResponse
-                                                                  options:kNilOptions
-                                                                    error:&jsonError];
-    
-    // Handle response from server
-    if (!jsonError) {
-        self.identity = tokenResponse[@"identity"];
-        user[@"twilioIdentity"] = self.identity;
-        [user saveInBackground];
-        NSLog(@"Token found: %@", tokenResponse[@"token"]);
-       //  Create an AccessManager to manage our Access Token
-//        self.accessManager = [TwilioAccessManager accessManagerWithToken:tokenResponse[@"token"]
-//                                                                delegate:self];
-//        
-//        // Create a Conversations Client and connect to Twilio's backend.
-//        self.conversationsClient =
-//        [TwilioConversationsClient conversationsClientWithAccessManager:self.accessManager
-//                                                               delegate:self];
-//        [self.conversationsClient listen];
-        
-        NSString *accessToken = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2MxMjZhMDBhOGY3NjE2YTkyYzA2ZGMxNjg1OGEwYzA5LTE0NTc3OTUxMTciLCJpc3MiOiJTS2MxMjZhMDBhOGY3NjE2YTkyYzA2ZGMxNjg1OGEwYzA5Iiwic3ViIjoiQUNkMzE3ZjRiMzkzNzk3NzQ0OTM4NzdjYzgyNzZkNmUyOSIsImV4cCI6MTQ1Nzc5ODcxNywiZ3JhbnRzIjp7ImlkZW50aXR5IjoicXVpY2tzdGFydCIsInJ0YyI6eyJjb25maWd1cmF0aW9uX3Byb2ZpbGVfc2lkIjoiVlM3NGUzNDU4ODQzN2U2NDkwMzY1YjExNDk1ZTk2NTgxNiJ9fX0.MFlQYPeLvPRtjLm5E7R6nsQNLJYMtVcdaFiwZ2tNfX0";
-                self.accessManager = [TwilioAccessManager accessManagerWithToken:accessToken delegate:self];
-                self.conversationsClient = [TwilioConversationsClient conversationsClientWithAccessManager:self.accessManager
-                                                                                                  delegate:self];
-                [self.conversationsClient listen];
-        
-        
-        PFObject *conversation = [PFObject objectWithClassName:@"Conversations"];
-        conversation[@"user"] = user;
-        [conversation saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+    if (jsonResponse) {
+        NSError *jsonError;
+        NSDictionary *tokenResponse = [NSJSONSerialization JSONObjectWithData:jsonResponse
+                                                                      options:kNilOptions
+                                                                        error:&jsonError];
+        // Handle response from server
+        if (!jsonError) {
+            self.identity = tokenResponse[@"identity"];
+            user[@"twilioIdentity"] = self.identity;
+            [user saveInBackground];
+            self.accessManager = [TwilioAccessManager accessManagerWithToken:tokenResponse[@"token"] delegate:self];
+            self.conversationsClient = [TwilioConversationsClient conversationsClientWithAccessManager:self.accessManager
+                                                                                              delegate:self];
+            [self.conversationsClient listen];
             
-            PFQuery *query = [PFUser query];
-            [query whereKey:@"languages" containsAllObjectsInArray:@[self.firstLanguage, self.secondLanguage]];
-            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                if (!error) {
-                    // The find succeeded.
-                    NSLog(@"Successfully retrieved %d scores.", objects.count);
-                    // Do something with the found objects
-                    for (PFObject *object in objects) {
-                        NSLog(@"%@", object.objectId);
-                        NSDictionary *data = @{@"conversationId" : conversation.objectId, @"twilioId":self.identity};
-                        if (object[@"pushID"]) {
-                            [[(AppDelegate *)[[UIApplication sharedApplication] delegate] oneSignal] postNotification:@{
-                                                                                                                        @"contents" : @{@"en": [NSString stringWithFormat:@"Hilfe!"]},
-                                                                                                                        @"include_player_ids": @[object[@"pushID"]],
-                                                                                                                        @"data": data
-                                                                                                                        }];
+            PFObject *conversation = [PFObject objectWithClassName:@"Conversations"];
+            conversation[@"user"] = user;
+            [conversation saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                
+                PFQuery *query = [PFUser query];
+                [query whereKey:@"languages" containsAllObjectsInArray:@[self.firstLanguage, self.secondLanguage]];
+                [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                    if (!error) {
+                        // The find succeeded.
+                        NSLog(@"Successfully retrieved %d scores.", objects.count);
+                        // Do something with the found objects
+                        for (PFObject *object in objects) {
+                            NSLog(@"%@", object.objectId);
+                            NSDictionary *data = @{@"conversationId" : conversation.objectId, @"twilioId":self.identity};
+                            if (object[@"pushID"]) {
+                                [[(AppDelegate *)[[UIApplication sharedApplication] delegate] oneSignal] postNotification:@{
+                                                                                                                            @"contents" : @{@"en": [NSString stringWithFormat:@"Hilfe!"]},
+                                                                                                                            @"include_player_ids": @[object[@"pushID"]],
+                                                                                                                            @"data": data
+                                                                                                                            }];
+                            }
                         }
+                    } else {
+                        // Log details of the failure
+                        NSLog(@"Error: %@ %@", error, [error userInfo]);
                     }
-                } else {
-                    // Log details of the failure
-                    NSLog(@"Error: %@ %@", error, [error userInfo]);
-                }
+                }];
             }];
-        }];
-        
-        /* See the "Working with Conversations" guide for instructions on implementing
-         a TwilioConversationsClientDelegate */
-    } else {
-        NSLog(@"error fetching token from server");
+            
+        }
     }
 }
 

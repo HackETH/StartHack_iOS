@@ -13,10 +13,8 @@
 #import <TwilioConversationsClient/TwilioConversationsClient.h>
 
 
-@interface AppDelegate ()
+@interface AppDelegate () 
 
-@property TwilioAccessManager *accessManager;
-@property TwilioConversationsClient *conversationsClient;
 
 
 
@@ -41,29 +39,27 @@
                                                    
                                                    
                                                    
-                                                   UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
-                                                                                                        bundle:nil];
-                                                   ConversationViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"Conversation"];
+                                                   
+                                                           
+                                                           UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                                                                bundle:nil];
+                                                           AcceptCallViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"AcceptCall"];
+                                                           
+                                                           
+                                                           
+                                                           
+                                                           add.inviteeIdentity =additionalData[@"twilioId"];
+                                                           
+                                                           
+                                                           
+                                                           
+                                                           
+                                                           
+                                                           [(UINavigationController *)self.window.rootViewController pushViewController:add animated:NO];
+                                                     
                                                    
                                                    
-                                                   NSString *accessToken = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTS2MxMjZhMDBhOGY3NjE2YTkyYzA2ZGMxNjg1OGEwYzA5LTE0NTc3OTUxMTciLCJpc3MiOiJTS2MxMjZhMDBhOGY3NjE2YTkyYzA2ZGMxNjg1OGEwYzA5Iiwic3ViIjoiQUNkMzE3ZjRiMzkzNzk3NzQ0OTM4NzdjYzgyNzZkNmUyOSIsImV4cCI6MTQ1Nzc5ODcxNywiZ3JhbnRzIjp7ImlkZW50aXR5IjoicXVpY2tzdGFydCIsInJ0YyI6eyJjb25maWd1cmF0aW9uX3Byb2ZpbGVfc2lkIjoiVlM3NGUzNDU4ODQzN2U2NDkwMzY1YjExNDk1ZTk2NTgxNiJ9fX0.MFlQYPeLvPRtjLm5E7R6nsQNLJYMtVcdaFiwZ2tNfX0";
-                                                   self.accessManager = [TwilioAccessManager accessManagerWithToken:accessToken delegate:self];
                                                    
-                                                   [self.conversationsClient listen];
-                                                   
-                                                   // Create a Conversations Client and connect to Twilio's backend.
-                                                   self.conversationsClient =
-                                                   [TwilioConversationsClient conversationsClientWithAccessManager:self.accessManager
-                                                                                                          delegate:self];
-                                                   
-                                                   add.inviteeIdentity =additionalData[@"twilioId"];
-                                                   add.client = self.conversationsClient;
-                                                   
-                                                
-                                                   
-                                                   
-                                                   
-                                                   [(UINavigationController *)self.window.rootViewController pushViewController:add animated:NO];
                                                    
                                                    // Check for and read any custom values you added to the notification
                                                    // This done with the "Additonal Data" section the dashbaord.
@@ -82,6 +78,10 @@
     
     return YES;
 }
+
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
