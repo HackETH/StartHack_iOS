@@ -3,7 +3,16 @@
 # Uncomment this line if you're using Swift
 # use_frameworks!
 
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/twilio/cocoapod-specs'
+
+platform :ios, '9.0'
+
 target 'StartHack' do
+    
+    pod 'Parse'
+    pod 'OneSignal'
+    pod 'TwilioConversationsClient'
 
 end
 

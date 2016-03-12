@@ -7,8 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import <Parse/Parse.h>
+#import <OneSignal/OneSignal.h>
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) OneSignal *oneSignal;
+
 
 @end
 
@@ -17,6 +22,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [Parse setApplicationId:@"1sYvxjSWZhqp1hBSfzLTftPau1rBD6B07VrGEqWQ"
+                  clientKey:@"K2lY94TC18AMim1erOQcaryGTAHBEGoVHJ4iCKPF"];
+    
+    self.oneSignal = [[OneSignal alloc] initWithLaunchOptions:launchOptions
+                                                        appId:@"65875f80-874f-4502-8c5e-9a22ce8dab4f"
+                                           handleNotification:nil];
+    
     return YES;
 }
 

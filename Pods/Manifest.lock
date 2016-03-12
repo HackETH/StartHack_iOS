@@ -1,1 +1,22 @@
+PODS:
+  - Bolts/Tasks (1.6.0)
+  - OneSignal (1.11.3)
+  - Parse (1.12.0):
+    - Bolts/Tasks (~> 1.5)
+  - TwilioCommon (0.2.0)
+  - TwilioConversationsClient (0.21.6):
+    - TwilioCommon (~> 0.2.0)
+
+DEPENDENCIES:
+  - OneSignal
+  - Parse
+  - TwilioConversationsClient
+
+SPEC CHECKSUMS:
+  Bolts: f52a250053bb517ca874523c3913776359ab3def
+  OneSignal: 309b636ba56955a427fd1d2544ba4dd52e19fce0
+  Parse: de2c52a9a1421b91ae7594ab8ce191afd184f19b
+  TwilioCommon: c40c4bdc99865473852395f917adf25e222ec16e
+  TwilioConversationsClient: bff246cba6a7adbefa9b9d04d5c247383b32fba3
+
 COCOAPODS: 0.39.0

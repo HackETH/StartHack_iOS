@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3003BB4AECFFD16C570D43AF /* libPods-StartHack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CEA2B8B647C916828D0071 /* libPods-StartHack.a */; };
 		D018FB771C9397200028DCE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB761C9397200028DCE6 /* main.m */; };
 		D018FB7A1C9397200028DCE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB791C9397200028DCE6 /* AppDelegate.m */; };
 		D018FB7D1C9397200028DCE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB7C1C9397200028DCE6 /* ViewController.m */; };
@@ -15,6 +16,11 @@
 		D018FB851C9397200028DCE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D018FB831C9397200028DCE6 /* LaunchScreen.storyboard */; };
 		D018FB901C9397200028DCE6 /* StartHackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB8F1C9397200028DCE6 /* StartHackTests.m */; };
 		D018FB9B1C9397200028DCE6 /* StartHackUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB9A1C9397200028DCE6 /* StartHackUITests.m */; };
+		D018FBAE1C93A4650028DCE6 /* SelectTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FBAD1C93A4650028DCE6 /* SelectTypeViewController.m */; };
+		D018FBB01C93AA4D0028DCE6 /* languages.plist in Resources */ = {isa = PBXBuildFile; fileRef = D018FBAF1C93AA4D0028DCE6 /* languages.plist */; };
+		D03498C91C93AD59005190C1 /* StandardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D03498C81C93AD59005190C1 /* StandardTableViewCell.m */; };
+		D03498CC1C93AD81005190C1 /* LanguagePickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03498CB1C93AD81005190C1 /* LanguagePickerTableViewController.m */; };
+		D0E88E491C93C59300EC0FAF /* TranslatorMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E88E481C93C59300EC0FAF /* TranslatorMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08CEA2B8B647C916828D0071 /* libPods-StartHack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StartHack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35DF0809363B3A5FB5CDA48D /* Pods-StartHack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHack.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartHack/Pods-StartHack.release.xcconfig"; sourceTree = "<group>"; };
 		D018FB721C9397200028DCE6 /* StartHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StartHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D018FB761C9397200028DCE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D018FB781C9397200028DCE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +59,16 @@
 		D018FB961C9397200028DCE6 /* StartHackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StartHackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D018FB9A1C9397200028DCE6 /* StartHackUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartHackUITests.m; sourceTree = "<group>"; };
 		D018FB9C1C9397200028DCE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D018FBAC1C93A4650028DCE6 /* SelectTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTypeViewController.h; sourceTree = "<group>"; };
+		D018FBAD1C93A4650028DCE6 /* SelectTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTypeViewController.m; sourceTree = "<group>"; };
+		D018FBAF1C93AA4D0028DCE6 /* languages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = languages.plist; sourceTree = "<group>"; };
+		D03498C71C93AD59005190C1 /* StandardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StandardTableViewCell.h; sourceTree = "<group>"; };
+		D03498C81C93AD59005190C1 /* StandardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StandardTableViewCell.m; sourceTree = "<group>"; };
+		D03498CA1C93AD81005190C1 /* LanguagePickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguagePickerTableViewController.h; sourceTree = "<group>"; };
+		D03498CB1C93AD81005190C1 /* LanguagePickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguagePickerTableViewController.m; sourceTree = "<group>"; };
+		D0E88E471C93C59300EC0FAF /* TranslatorMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslatorMainViewController.h; sourceTree = "<group>"; };
+		D0E88E481C93C59300EC0FAF /* TranslatorMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslatorMainViewController.m; sourceTree = "<group>"; };
+		FD270E1C68FD4521B9BE2D5C /* Pods-StartHack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StartHack/Pods-StartHack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3003BB4AECFFD16C570D43AF /* libPods-StartHack.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +97,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53DEF008B63B43CB84E5365D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD270E1C68FD4521B9BE2D5C /* Pods-StartHack.debug.xcconfig */,
+				35DF0809363B3A5FB5CDA48D /* Pods-StartHack.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA367DCDA245E8F01226E688 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08CEA2B8B647C916828D0071 /* libPods-StartHack.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D018FB691C9397200028DCE6 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +121,8 @@
 				D018FB8E1C9397200028DCE6 /* StartHackTests */,
 				D018FB991C9397200028DCE6 /* StartHackUITests */,
 				D018FB731C9397200028DCE6 /* Products */,
+				53DEF008B63B43CB84E5365D /* Pods */,
+				AA367DCDA245E8F01226E688 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,7 +143,14 @@
 				D018FB791C9397200028DCE6 /* AppDelegate.m */,
 				D018FB7B1C9397200028DCE6 /* ViewController.h */,
 				D018FB7C1C9397200028DCE6 /* ViewController.m */,
+				D018FBAC1C93A4650028DCE6 /* SelectTypeViewController.h */,
+				D018FBAD1C93A4650028DCE6 /* SelectTypeViewController.m */,
+				D03498CA1C93AD81005190C1 /* LanguagePickerTableViewController.h */,
+				D03498CB1C93AD81005190C1 /* LanguagePickerTableViewController.m */,
 				D018FB7E1C9397200028DCE6 /* Main.storyboard */,
+				D0E88E471C93C59300EC0FAF /* TranslatorMainViewController.h */,
+				D0E88E481C93C59300EC0FAF /* TranslatorMainViewController.m */,
+				D018FBAF1C93AA4D0028DCE6 /* languages.plist */,
 				D018FB811C9397200028DCE6 /* Assets.xcassets */,
 				D018FB831C9397200028DCE6 /* LaunchScreen.storyboard */,
 				D018FB861C9397200028DCE6 /* Info.plist */,
@@ -117,6 +162,8 @@
 		D018FB751C9397200028DCE6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D03498C71C93AD59005190C1 /* StandardTableViewCell.h */,
+				D03498C81C93AD59005190C1 /* StandardTableViewCell.m */,
 				D018FB761C9397200028DCE6 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -147,9 +194,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D018FB9F1C9397200028DCE6 /* Build configuration list for PBXNativeTarget "StartHack" */;
 			buildPhases = (
+				3791A2A0DCDD2BA355767AE4 /* Check Pods Manifest.lock */,
 				D018FB6E1C9397200028DCE6 /* Sources */,
 				D018FB6F1C9397200028DCE6 /* Frameworks */,
 				D018FB701C9397200028DCE6 /* Resources */,
+				6FE9E3F56F1771B90B7EEDC8 /* Embed Pods Frameworks */,
+				70978180C7DDB32CA307E853 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +257,7 @@
 				TargetAttributes = {
 					D018FB711C9397200028DCE6 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 68X9Z9JMZ9;
 					};
 					D018FB8A1C9397200028DCE6 = {
 						CreatedOnToolsVersion = 7.3;
@@ -243,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D018FBB01C93AA4D0028DCE6 /* languages.plist in Resources */,
 				D018FB851C9397200028DCE6 /* LaunchScreen.storyboard in Resources */,
 				D018FB821C9397200028DCE6 /* Assets.xcassets in Resources */,
 				D018FB801C9397200028DCE6 /* Main.storyboard in Resources */,
@@ -265,13 +317,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3791A2A0DCDD2BA355767AE4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6FE9E3F56F1771B90B7EEDC8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StartHack/Pods-StartHack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70978180C7DDB32CA307E853 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StartHack/Pods-StartHack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D018FB6E1C9397200028DCE6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D018FB7D1C9397200028DCE6 /* ViewController.m in Sources */,
+				D03498CC1C93AD81005190C1 /* LanguagePickerTableViewController.m in Sources */,
+				D03498C91C93AD59005190C1 /* StandardTableViewCell.m in Sources */,
 				D018FB7A1C9397200028DCE6 /* AppDelegate.m in Sources */,
+				D018FBAE1C93A4650028DCE6 /* SelectTypeViewController.m in Sources */,
+				D0E88E491C93C59300EC0FAF /* TranslatorMainViewController.m in Sources */,
 				D018FB771C9397200028DCE6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,9 +513,13 @@
 		};
 		D018FBA01C9397200028DCE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD270E1C68FD4521B9BE2D5C /* Pods-StartHack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = StartHack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mueller.StartHack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,9 +528,13 @@
 		};
 		D018FBA11C9397200028DCE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35DF0809363B3A5FB5CDA48D /* Pods-StartHack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = StartHack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mueller.StartHack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -494,6 +606,7 @@
 				D018FBA11C9397200028DCE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D018FBA21C9397200028DCE6 /* Build configuration list for PBXNativeTarget "StartHackTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +615,7 @@
 				D018FBA41C9397200028DCE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D018FBA51C9397200028DCE6 /* Build configuration list for PBXNativeTarget "StartHackUITests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +624,7 @@
 				D018FBA71C9397200028DCE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
