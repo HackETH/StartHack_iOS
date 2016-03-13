@@ -15,6 +15,9 @@
 
 @property NSMutableArray *languages;
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
 
 @end
 
@@ -80,7 +83,7 @@
     
     
     [add setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-    
+    [[self navigationController] setNavigationBarHidden:YES animated:NO];
     [self.navigationController pushViewController:add animated:YES];
         
     }
@@ -108,8 +111,12 @@
     
     if ([language[@"selected"] isEqualToString:@"no"]) {
         cell.languageSelectedImage.image = [UIImage imageNamed:@"unchecked"];
+        cell.sideColor.backgroundColor = [UIColor whiteColor];
     }
-    else cell.languageSelectedImage.image = [UIImage imageNamed:@"checked"];
+    else {
+        cell.languageSelectedImage.image = [UIImage imageNamed:@"checked"];
+        cell.sideColor.backgroundColor = UIColorFromRGB(0x05AE00);
+    }
     
     cell.englishLanguageLabel.text = language[@"language_name"];
     cell.languageLabel.text = language[@"native_name"];

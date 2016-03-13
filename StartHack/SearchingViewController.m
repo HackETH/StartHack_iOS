@@ -11,6 +11,7 @@
 #import <TwilioConversationsClient/TwilioConversationsClient.h>
 #import "AppDelegate.h"
 #import "ConversationViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface SearchingViewController () <TwilioConversationsClientDelegate, TWCConversationDelegate, TwilioAccessManagerDelegate, UIAlertViewDelegate>
 
@@ -19,6 +20,11 @@
 @property (nonatomic) TwilioConversationsClient *conversationsClient;
 @property (nonatomic) TWCIncomingInvite *incomingInvite;
 
+@property (weak, nonatomic) IBOutlet UIImageView *oval1;
+@property (weak, nonatomic) IBOutlet UIImageView *oval2;
+@property (weak, nonatomic) IBOutlet UIImageView *oval3;
+@property (weak, nonatomic) IBOutlet UIImageView *oval4;
+@property (weak, nonatomic) IBOutlet UILabel *searchingLable;
 @property (nonatomic, strong) TwilioAccessManager *accessManager;
 
 @end
@@ -28,7 +34,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
+    rotationAnimation.duration = 3.5;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = INFINITY;
     
+    
+    [self.oval1.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    rotationAnimation.duration = 3.8;
+    [self.oval3.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: - M_PI * 2.0 ];
+    rotationAnimation.duration = 3.3;
+    [self.oval2.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    rotationAnimation.duration = 3.4;
+    [self.oval4.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    
+    CABasicAnimation *theAnimation;
+    
+    theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
+    theAnimation.duration=1.0;
+    theAnimation.repeatCount=HUGE_VALF;
+    theAnimation.autoreverses=YES;
+    theAnimation.fromValue=[NSNumber numberWithFloat:1.0];
+    theAnimation.toValue=[NSNumber numberWithFloat:0.5];
+    [self.searchingLable.layer addAnimation:theAnimation forKey:@"animateOpacity"];
     
     // Do any additional setup after loading the view.
 }
@@ -93,7 +124,7 @@
                             NSDictionary *data = @{@"conversationId" : conversation.objectId, @"twilioId":self.identity};
                             if (object[@"pushID"]) {
                                 [[(AppDelegate *)[[UIApplication sharedApplication] delegate] oneSignal] postNotification:@{
-                                                                                                                            @"contents" : @{@"en": [NSString stringWithFormat:@"Hilfe!"]},
+                                                                                                                            @"contents" : @{@"en": [NSString stringWithFormat:@"Someone needs your help. Open the App now to translate."]},
                                                                                                                             @"include_player_ids": @[object[@"pushID"]],
                                                                                                                             @"data": data
                                                                                                                             }];
@@ -175,7 +206,7 @@
     add.incomingInvite = self.incomingInvite;
     add.client = self.conversationsClient;
     
-    [self.navigationController pushViewController:add animated:YES];
+    [self.navigationController pushViewController:add animated:NO];
     
 //    NSString *incomingFrom = [NSString stringWithFormat:@"Incoming invite from %@", invite.from];
 //    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <TwilioConversationsClient/TwilioConversationsClient.h>
 #import <AVFoundation/AVFoundation.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface ConversationViewController () <TWCConversationDelegate, TWCParticipantDelegate, TWCLocalMediaDelegate, TWCVideoTrackDelegate>
 
@@ -21,10 +22,17 @@
 @property (weak, nonatomic) IBOutlet UIButton *muteButton;
 @property (weak, nonatomic) IBOutlet UIButton *hangupButton;
 
+@property (weak, nonatomic) IBOutlet UIImageView *oval1;
+@property (weak, nonatomic) IBOutlet UIImageView *oval2;
+@property (weak, nonatomic) IBOutlet UIImageView *oval3;
+@property (weak, nonatomic) IBOutlet UIImageView *oval4;
+@property (weak, nonatomic) IBOutlet UILabel *searchingLable;
+
 @property (nonatomic, strong) TWCLocalMedia *localMedia;
 @property (nonatomic, strong) TWCCameraCapturer *camera;
 @property (nonatomic, strong) TWCConversation *conversation;
 @property (nonatomic, strong) TWCOutgoingInvite *outgoingInvite;
+@property BOOL *firstCalled;
 
 @end
 
@@ -32,6 +40,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
+    rotationAnimation.duration = 3.5;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = INFINITY;
+    
+    
+    [self.oval1.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    rotationAnimation.duration = 3.8;
+    [self.oval3.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: - M_PI * 2.0 ];
+    rotationAnimation.duration = 3.3;
+    [self.oval2.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    rotationAnimation.duration = 3.4;
+    [self.oval4.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    
+    CABasicAnimation *theAnimation;
+    
+    theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
+    theAnimation.duration=1.0;
+    theAnimation.repeatCount=HUGE_VALF;
+    theAnimation.autoreverses=YES;
+    theAnimation.fromValue=[NSNumber numberWithFloat:1.0];
+    theAnimation.toValue=[NSNumber numberWithFloat:0.5];
+    [self.searchingLable.layer addAnimation:theAnimation forKey:@"animateOpacity"];
+    
 
     /* LocalMedia represents our local camera and microphone (media) configuration */
     self.localMedia = [[TWCLocalMedia alloc] initWithDelegate:self];
@@ -53,6 +90,13 @@
         [self.camera.videoTrack attach:self.localVideoContainer];
         self.camera.videoTrack.delegate = self;
     }
+    
+    self.localVideoContainer.hidden = true;
+    self.remoteVideoContainer.hidden = true;
+    self.pauseButton.hidden = true;
+    self.flipCameraButton.hidden = true;
+    self.muteButton.hidden = true;
+    self.hangupButton.hidden = true;
 
     /* For this demonstration, we always use Speaker audio output (vs. TWCAudioOutputReceiver) */
     [TwilioConversationsClient setAudioOutput:TWCAudioOutputSpeaker];
@@ -83,6 +127,25 @@
     TWCVideoTrack *cameraTrack = self.camera.videoTrack;
     if (cameraTrack && cameraTrack.videoDimensions.width > 0 && cameraTrack.videoDimensions.height > 0) {
         CMVideoDimensions dimensions = self.camera.videoTrack.videoDimensions;
+        
+        if (self.firstCalled) {
+            self.localVideoContainer.hidden = false;
+            self.remoteVideoContainer.hidden = false;
+            self.pauseButton.hidden = false;
+            self.flipCameraButton.hidden = false;
+            self.muteButton.hidden = false;
+            self.hangupButton.hidden = false;
+            
+        }
+        else {
+            self.firstCalled = TRUE;
+            self.localVideoContainer.hidden = true;
+            self.remoteVideoContainer.hidden = true;
+            self.pauseButton.hidden = true;
+            self.flipCameraButton.hidden = true;
+            self.muteButton.hidden = true;
+            self.hangupButton.hidden = true;
+        }
 
         if (dimensions.width > 0 && dimensions.height > 0) {
             CGRect boundingRect = CGRectMake(0, 0, 160, 160);
@@ -123,7 +186,8 @@
 {
     self.localMedia = nil;
     self.conversation = nil;
-    [self dismissViewControllerAnimated:YES completion:nil];
+     [self.navigationController popViewControllerAnimated:YES];
+     [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - TWCConversationDelegate
@@ -234,7 +298,7 @@
 - (void)updatePauseButton
 {
     NSString *title = self.camera.videoTrack.enabled ? @"Pause" : @"Unpause";
-    [self.pauseButton setTitle:title forState:UIControlStateNormal];
+   // [self.pauseButton setTitle:title forState:UIControlStateNormal];
 }
 
 - (IBAction)pauseButtonClicked:(id)sender {
@@ -247,7 +311,7 @@
 - (IBAction)muteButtonClicked:(id)sender {
     if (self.conversation) {
         self.conversation.localMedia.microphoneMuted = !self.conversation.localMedia.microphoneMuted;
-        [self.muteButton setTitle:self.conversation.localMedia.microphoneMuted? @"Unmute" : @"Mute" forState:UIControlStateNormal];
+       // [self.muteButton setTitle:self.conversation.localMedia.microphoneMuted? @"Unmute" : @"Mute" forState:UIControlStateNormal];
     }
 }
 
@@ -255,6 +319,8 @@
     [self.conversation disconnect];
     [self.incomingInvite reject];
     [self.outgoingInvite cancel];
+     [self.navigationController popViewControllerAnimated:YES];
+     [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -13,8 +13,14 @@
 #import "LanguagePickerTableViewController.h"
 #import "TranslatorMainViewController.h"
 #import "UserMainViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *oval1;
+@property (weak, nonatomic) IBOutlet UIImageView *oval2;
+@property (weak, nonatomic) IBOutlet UIImageView *oval3;
+@property (weak, nonatomic) IBOutlet UIImageView *oval4;
 
 @end
 
@@ -22,6 +28,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
+    rotationAnimation.duration = 3.5;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = INFINITY;
+    
+    
+    [self.oval1.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    rotationAnimation.duration = 3.8;
+    [self.oval3.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: - M_PI * 2.0 ];
+    rotationAnimation.duration = 3.3;
+    [self.oval2.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    rotationAnimation.duration = 3.4;
+    [self.oval4.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],
                                                                       NSFontAttributeName:[UIFont fontWithName:@"Avenir" size:21]}];
@@ -61,9 +86,10 @@
                 [[self navigationController] setNavigationBarHidden:YES animated:NO];
                 
                 
+                
                 UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
                                                                      bundle:nil];
-                LanguagePickerTableViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"LanguagePicker"];
+                SelectTypeViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"selectType"];
                 
                 
                 [self.navigationController pushViewController:add animated:NO];
@@ -71,6 +97,8 @@
             
         }
         else {
+            
+            if ([user[@"type"] isEqualToString:@"user"]) {
             //Present the Type Selector View (Translator or User)
             [[self navigationController] setNavigationBarHidden:YES animated:NO];
             
@@ -81,6 +109,18 @@
             
             
             [self.navigationController pushViewController:add animated:NO];
+            }
+            else {
+                [[self navigationController] setNavigationBarHidden:YES animated:NO];
+                
+                
+                UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                     bundle:nil];
+                SelectTypeViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"selectType"];
+                
+                
+                [self.navigationController pushViewController:add animated:NO];
+            }
         }
         
         

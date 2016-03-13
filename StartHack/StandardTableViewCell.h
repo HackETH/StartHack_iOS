@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *languageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *englishLanguageLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *languageSelectedImage;
+@property (weak, nonatomic) IBOutlet UILabel *sideColor;
 
 @end

@@ -49,7 +49,7 @@
                                                            
                                                            
                                                            add.inviteeIdentity =additionalData[@"twilioId"];
-                                                           
+                                                           add.conversationId =additionalData[@"conversationId"];
                                                            
                                                            
                                                            
@@ -72,6 +72,13 @@
     
     [self.oneSignal IdsAvailable:^(NSString* userId, NSString* pushToken) {
         NSLog(@"UserId:%@", userId);
+        PFUser *user = [PFUser currentUser];
+        
+        if (![user[@"pushID"] isEqualToString:userId]) {
+            user[@"pushID"] = userId;
+            [user saveInBackground];
+        }
+        
         if (pushToken != nil)
             NSLog(@"pushToken:%@", pushToken);
     }];

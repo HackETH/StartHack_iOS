@@ -13,14 +13,58 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Oval 4" translatesAutoresizingMaskIntoConstraints="NO" id="8eb-TZ-hS4">
+                                <rect key="frame" x="74" y="219" width="227" height="227"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="39" y="188" width="297" height="291"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval 3" translatesAutoresizingMaskIntoConstraints="NO" id="e6f-hp-qbz">
+                                <rect key="frame" x="85" y="231" width="205" height="205"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="39" y="188" width="297" height="291"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval 1" translatesAutoresizingMaskIntoConstraints="NO" id="hRF-ev-KUM">
+                                <rect key="frame" x="116" y="262" width="143" height="143"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="39" y="188" width="297" height="291"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval 2" translatesAutoresizingMaskIntoConstraints="NO" id="iD5-t8-vTQ">
+                                <rect key="frame" x="101" y="247" width="173" height="173"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="39" y="188" width="297" height="291"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hRF-ev-KUM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9Zw-LZ-cha"/>
+                            <constraint firstItem="iD5-t8-vTQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="AfC-cS-aOb"/>
+                            <constraint firstItem="hRF-ev-KUM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Hbz-RT-fac"/>
+                            <constraint firstItem="8eb-TZ-hS4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JlG-5D-3Di"/>
+                            <constraint firstItem="iD5-t8-vTQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gDO-Fc-y4y"/>
+                            <constraint firstItem="e6f-hp-qbz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="joC-nX-qpt"/>
+                            <constraint firstItem="8eb-TZ-hS4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sZN-SA-L5V"/>
+                            <constraint firstItem="e6f-hp-qbz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tyB-hV-ord"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Oval 1" width="143" height="143"/>
+        <image name="Oval 2" width="173" height="173"/>
+        <image name="Oval 3" width="205" height="205"/>
+        <image name="Oval 4" width="227" height="227"/>
+    </resources>
 </document>

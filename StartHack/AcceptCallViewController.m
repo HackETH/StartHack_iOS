@@ -11,6 +11,7 @@
 #import <TwilioConversationsClient/TwilioConversationsClient.h>
 #import <AVFoundation/AVFoundation.h>
 #import "ConversationViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface AcceptCallViewController () <TwilioConversationsClientDelegate, TWCConversationDelegate, TwilioAccessManagerDelegate, UIAlertViewDelegate>
 
@@ -23,13 +24,70 @@
 
 @property (nonatomic, strong) TwilioAccessManager *accessManager;
 
+@property (weak, nonatomic) IBOutlet UIImageView *oval1;
+@property (weak, nonatomic) IBOutlet UIImageView *oval2;
+@property (weak, nonatomic) IBOutlet UIImageView *oval3;
+@property (weak, nonatomic) IBOutlet UIImageView *oval4;
+@property (weak, nonatomic) IBOutlet UILabel *searchingLable;
+
 @end
 
 @implementation AcceptCallViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self listenForInvites];
+    
+    
+    CABasicAnimation* rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
+    rotationAnimation.duration = 3.5;
+    rotationAnimation.cumulative = YES;
+    rotationAnimation.repeatCount = INFINITY;
+    
+    
+    [self.oval1.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    rotationAnimation.duration = 3.8;
+    [self.oval3.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat: - M_PI * 2.0 ];
+    rotationAnimation.duration = 3.3;
+    [self.oval2.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    rotationAnimation.duration = 3.4;
+    [self.oval4.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    
+    CABasicAnimation *theAnimation;
+    
+    theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
+    theAnimation.duration=1.0;
+    theAnimation.repeatCount=HUGE_VALF;
+    theAnimation.autoreverses=YES;
+    theAnimation.fromValue=[NSNumber numberWithFloat:1.0];
+    theAnimation.toValue=[NSNumber numberWithFloat:0.5];
+    [self.searchingLable.layer addAnimation:theAnimation forKey:@"animateOpacity"];
+    
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Conversations"];
+    [query whereKey:@"objectId" equalTo:self.conversationId];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            if (object[@"translator"]) {
+                 [self.navigationController popViewControllerAnimated:YES];
+                
+            }
+            else  {
+                object[@"translator"] = [PFUser currentUser];
+                [object saveInBackground];
+                [self listenForInvites];
+                
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
+    
    }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -86,7 +144,7 @@
     add.inviteeIdentity = self.inviteeIdentity;
     add.client = self.conversationsClient;
     
-    [self.navigationController pushViewController:add animated:YES];
+    [self.navigationController pushViewController:add animated:NO];
     
 }
 
