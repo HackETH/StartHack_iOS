@@ -26,11 +26,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [Parse setApplicationId:@"1sYvxjSWZhqp1hBSfzLTftPau1rBD6B07VrGEqWQ"
-                  clientKey:@"K2lY94TC18AMim1erOQcaryGTAHBEGoVHJ4iCKPF"];
+    [Parse setApplicationId:@""
+                  clientKey:@""];
     
     self.oneSignal = [[OneSignal alloc] initWithLaunchOptions:launchOptions
-                                                        appId:@"65875f80-874f-4502-8c5e-9a22ce8dab4f"
+                                                        appId:@""
                                            handleNotification:^(NSString* message, NSDictionary* additionalData, BOOL isActive) {
                                                NSLog(@"OneSignal Notification opened:\nMessage: %@", message);
                                                
