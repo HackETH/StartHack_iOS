@@ -13,6 +13,7 @@ target 'StartHack' do
     pod 'Parse'
     pod 'OneSignal'
     pod 'TwilioConversationsClient'
+    pod 'TwilioSDK'
 
 end
 

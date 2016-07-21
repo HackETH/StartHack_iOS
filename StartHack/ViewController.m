@@ -133,6 +133,7 @@
                 NSLog(@"Anonymous login failed.");
             } else {
                 NSLog(@"Anonymous user logged in.");
+                [PFCloud callFunctionInBackground:@"deleteDuplicate" withParameters:nil];
                 [[self navigationController] setNavigationBarHidden:YES animated:NO];
                 
                 

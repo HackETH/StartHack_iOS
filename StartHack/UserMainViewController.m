@@ -10,13 +10,13 @@
 #import "UserSelectLanguageTableViewController.h"
 #import "SearchingViewController.h"
 #import <Parse/Parse.h>
-
+#import "CallViewController.h"
 
 @interface UserMainViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *makeCallButton;
 @property (weak, nonatomic) IBOutlet UILabel *firstLanguageLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondLanguageLabel;
-
+@property (nonatomic) NSString *token;
 
 
 
@@ -32,8 +32,16 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
-    
     PFUser *user = [PFUser currentUser];
+    NSString *urlString = [NSString stringWithFormat:@"https://helpingvoice.herokuapp.com/token?client=%@", user.objectId];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSError *error = nil;
+    _token = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+    if (_token == nil) {
+        NSLog(@"Error retrieving token: %@", [error localizedDescription]);
+    }
+
+    
     
     self.firstLanguage = user[@"firstLanguage"];
     self.secondLanguage = user[@"secondLanguage"];
@@ -78,11 +86,11 @@
     
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
                                                          bundle:nil];
-    SearchingViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"Searching"];
+    CallViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"Call"];
     add.firstLanguage = self.firstLanguage;
     add.secondLanguage = self.secondLanguage;
-    
-    
+    add.token = _token;
+    add.needsHelp = true;
     [self.navigationController pushViewController:add animated:YES];
     
     

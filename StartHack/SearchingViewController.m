@@ -8,12 +8,12 @@
 
 #import "SearchingViewController.h"
 #import <Parse/Parse.h>
-#import <TwilioConversationsClient/TwilioConversationsClient.h>
+#import <TwilioSDK/TwilioClient.h>
 #import "AppDelegate.h"
 #import "ConversationViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface SearchingViewController () <TwilioConversationsClientDelegate, TWCConversationDelegate, TwilioAccessManagerDelegate, UIAlertViewDelegate>
+@interface SearchingViewController () <TCDeviceDelegate,UIAlertViewDelegate>
 
 @property NSString *identity;
 
@@ -25,8 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *oval3;
 @property (weak, nonatomic) IBOutlet UIImageView *oval4;
 @property (weak, nonatomic) IBOutlet UILabel *searchingLable;
-@property (nonatomic, strong) TwilioAccessManager *accessManager;
-
+@property (strong,nonatomic) TCDevice *phone;
+@property (strong,nonatomic) TCConnection *connection;
 @end
 
 @implementation SearchingViewController
@@ -63,28 +63,21 @@
     
     // Do any additional setup after loading the view.
 }
-
-- (void)viewDidAppear:(BOOL)animated{
-    
-    [super viewDidAppear:animated];
-    
-    
-    
-    [self listenForInvites];
-    
-    
-}
-
-- (void)listenForInvites {
-    /* TWCLogLevelDisabled, TWCLogLevelError, TWCLogLevelWarning, TWCLogLevelInfo, TWCLogLevelDebug, TWCLogLevelVerbose  */
-    [TwilioConversationsClient setLogLevel:TWCLogLevelError];
-    
-    if (!self.conversationsClient) {
-        
-      
-        [self retrieveAccessTokenfromServer];
+-(void)viewDidAppear:(BOOL)animated{
+    PFUser *user = [PFUser currentUser];
+    NSString *urlString = [NSString stringWithFormat:@"https://helpingvoice.herokuapp.com/token?client=%@",user.objectId ];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSError *error = nil;
+    NSString *token = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
+    if (token == nil) {
+        NSLog(@"Error retrieving token: %@", [error localizedDescription]);
+    } else {
+        _phone = [[TCDevice alloc] initWithCapabilityToken:token delegate:self];
     }
 }
+
+
+
 
 -(void) retrieveAccessTokenfromServer {
     PFUser *user = [PFUser currentUser];
@@ -103,10 +96,6 @@
             self.identity = tokenResponse[@"identity"];
             user[@"twilioIdentity"] = self.identity;
             [user saveInBackground];
-            self.accessManager = [TwilioAccessManager accessManagerWithToken:tokenResponse[@"token"] delegate:self];
-            self.conversationsClient = [TwilioConversationsClient conversationsClientWithAccessManager:self.accessManager
-                                                                                              delegate:self];
-            [self.conversationsClient listen];
             
             PFObject *conversation = [PFObject objectWithClassName:@"Conversations"];
             conversation[@"user"] = user;
@@ -121,11 +110,11 @@
                         // Do something with the found objects
                         for (PFObject *object in objects) {
                             NSLog(@"%@", object.objectId);
-                            NSDictionary *data = @{@"conversationId" : conversation.objectId, @"twilioId":self.identity};
+                            NSDictionary *data = @{@"conversationId" : conversation.objectId,@"reachMeHere":  user.objectId};
                             if (object[@"pushID"]) {
                                 [[(AppDelegate *)[[UIApplication sharedApplication] delegate] oneSignal] postNotification:@{
-                                                                                                                            @"contents" : @{@"en": [NSString stringWithFormat:@"Someone needs your help. Open the App now to translate."]},
-                                                                                                                            @"include_player_ids": @[object[@"pushID"]],
+                                                                                                                            @"contents" : @{@"en": [NSString stringWithFormat:@"Someone needs your help via audio. Open the App now to translate."]},
+                                                                                                                        @"include_player_ids": @[object[@"pushID"]],
                                                                                                                             @"data": data
                                                                                                                             }];
                             }
@@ -140,99 +129,26 @@
         }
     }
 }
+- (void)device:(TCDevice *)device didReceiveIncomingConnection:(TCConnection *)connection
+{
+    NSLog(@"Incoming connection from: %@", [connection parameters][@"From"]);
+    if (device.state == TCDeviceStateBusy) {
+        [connection reject];
+    } else {
+        [connection accept];
+        _connection = connection;
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)cancelButton:(id)sender {
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - TwilioConversationsClientDelegate
-/* This method is invoked when an attempt to connect to Twilio and listen for Converation invites has succeeded */
-- (void)conversationsClientDidStartListeningForInvites:(TwilioConversationsClient *)conversationsClient {
-    NSLog(@"Now listening for Conversation invites...");
-    
-//    self.listeningStatusLabel.text = @"Listening for Invites";
-//    
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        self.listeningStatusLabel.hidden = YES;
-//        self.inviteeLabel.hidden = NO;
-//        self.inviteeIdentityField.hidden = NO;
-//        self.createConversationButton.hidden = NO;
-//    });
-}
-
-/* This method is invoked when an attempt to connect to Twilio and listen for Converation invites has failed */
-- (void)conversationsClient:(TwilioConversationsClient *)conversationsClient didFailToStartListeningWithError:(NSError *)error {
-    NSLog(@"Failed to listen for Conversation invites: %@", error);
-    
-//    self.listeningStatusLabel.text = @"Failed to start listening for Invites";
-}
-
-/* This method is invoked when the SDK stops listening for Conversations invites */
-- (void)conversationsClientDidStopListeningForInvites:(TwilioConversationsClient *)conversationsClient error:(NSError *)error {
-    if (!error) {
-        NSLog(@"Successfully stopped listening for Conversation invites");
-        self.conversationsClient = nil;
-    } else {
-        NSLog(@"Stopped listening for Conversation invites (error): %ld", (long)error.code);
-    }
-}
-
-/* This method is invoked when an incoming Conversation invite is received */
-- (void)conversationsClient:(TwilioConversationsClient *)conversationsClient didReceiveInvite:(TWCIncomingInvite *)invite {
-    NSLog(@"Conversations invite received: %@", invite);
-    
-    /*
-     In this example we don't allow you to accept an invite while:
-     1. A conversation is already in progress.
-     2. Another invite is already being presented to the user.
-     If you wish to accept an invite during a conversation, end the active conversation first and then accept the new invite.
-     */
-    
-//    if (self.incomingInvite || self.navigationController.visibleViewController != self) {
-//        [invite reject];
-//        return;
-//    }
-    
-    self.incomingInvite = invite;
-    
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
-                                                         bundle:nil];
-    ConversationViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"Conversation"];
-    
-    add.incomingInvite = self.incomingInvite;
-    add.client = self.conversationsClient;
-    
-    [self.navigationController pushViewController:add animated:NO];
-    
-//    NSString *incomingFrom = [NSString stringWithFormat:@"Incoming invite from %@", invite.from];
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil
-//                                                        message:incomingFrom
-//                                                       delegate:self
-//                                              cancelButtonTitle:@"Reject"
-//                                              otherButtonTitles:@"Accept", nil];
-//    [alertView show];
-//    self.incomingAlert = alertView;
-}
-
-- (void)conversationsClient:(TwilioConversationsClient *)conversationsClient inviteDidCancel:(TWCIncomingInvite *)invite
-{
-//    [self.incomingAlert dismissWithClickedButtonIndex:0 animated:YES];
-    self.incomingInvite = nil;
-}
-
-#pragma mark -  TwilioAccessManagerDelegate
-
-- (void)accessManagerTokenExpired:(TwilioAccessManager *)accessManager {
-    NSLog(@"Token expired. Please update access manager with new token.");
-}
-
-- (void)accessManager:(TwilioAccessManager *)accessManager error:(NSError *)error {
-    NSLog(@"AccessManager encountered an error : %ld", (long)error.code);
-}
 
 /*
 #pragma mark - Navigation

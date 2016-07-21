@@ -8,10 +8,10 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-#import "AcceptCallViewController.h"
+#import "AcceptAudioCallViewController.h"
 #import "ConversationViewController.h"
 #import <TwilioConversationsClient/TwilioConversationsClient.h>
-
+#import "AcceptAudioCallViewController.h"
 
 @interface AppDelegate () 
 
@@ -25,48 +25,33 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    [Parse setApplicationId:@""
-                  clientKey:@""];
+    [Parse setApplicationId:@"1sYvxjSWZhqp1hBSfzLTftPau1rBD6B07VrGEqWQ"
+                  clientKey:@"K2lY94TC18AMim1erOQcaryGTAHBEGoVHJ4iCKPF"];
     
     self.oneSignal = [[OneSignal alloc] initWithLaunchOptions:launchOptions
-                                                        appId:@""
+                                                        appId:@"65875f80-874f-4502-8c5e-9a22ce8dab4f"
                                            handleNotification:^(NSString* message, NSDictionary* additionalData, BOOL isActive) {
                                                NSLog(@"OneSignal Notification opened:\nMessage: %@", message);
                                                
                                                if (additionalData) {
                                                    NSLog(@"additionalData: %@", additionalData);
+                                                   PFUser *user = [PFUser currentUser];
+                                                   if (![user[@"twilioIdentity"] isEqualToString:additionalData[@"twilioId"]] || ![user.objectId isEqualToString:additionalData[@"reachMeHere"]]) {
+                                                       UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                                                            bundle:nil];
+                                                       AcceptAudioCallViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"AcceptAudioCall"];
+                                                       
+                                                       
+                                                       
+                                                       add.reachHere =additionalData[@"reachMeHere"];
+                                                       
+                                                       
+                                                       
+                                                       
+                                                       [(UINavigationController *)self.window.rootViewController pushViewController:add animated:NO];
+                                                   }
                                                    
                                                    
-                                                   
-                                                   
-                                                           
-                                                           UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
-                                                                                                                bundle:nil];
-                                                           AcceptCallViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"AcceptCall"];
-                                                           
-                                                           
-                                                           
-                                                           
-                                                           add.inviteeIdentity =additionalData[@"twilioId"];
-                                                           add.conversationId =additionalData[@"conversationId"];
-                                                           
-                                                           
-                                                           
-                                                           
-                                                           
-                                                           [(UINavigationController *)self.window.rootViewController pushViewController:add animated:NO];
-                                                     
-                                                   
-                                                   
-                                                   
-                                                   
-                                                   // Check for and read any custom values you added to the notification
-                                                   // This done with the "Additonal Data" section the dashbaord.
-                                                   // OR setting the 'data' field on our REST API.
-                                                   NSString* customKey = additionalData[@"customKey"];
-                                                   if (customKey)
-                                                       NSLog(@"customKey: %@", customKey);
                                                }
                                            }];
     

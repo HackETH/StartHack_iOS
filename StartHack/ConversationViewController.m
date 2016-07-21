@@ -111,6 +111,7 @@
 
     if (self.incomingInvite) {
         /* This ViewController is being loaded to present an incoming Conversation request */
+        if ([_conversation disconnect]) NSLog(@"disconnected from active conversation");
         [self.incomingInvite acceptWithLocalMedia:self.localMedia
                                        completion:[self acceptHandler]];
     }

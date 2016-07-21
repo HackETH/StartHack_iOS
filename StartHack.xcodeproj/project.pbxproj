@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3003BB4AECFFD16C570D43AF /* libPods-StartHack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CEA2B8B647C916828D0071 /* libPods-StartHack.a */; };
+		5419A8E590DDC490FE2FD025 /* libPods-StartHackUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E26DE51CB319E1D90A5EB3 /* libPods-StartHackUITests.a */; };
+		5E7C6A4675BC8409358201C2 /* libPods-StartHackTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D809BB42DE37F65AE2F8CD /* libPods-StartHackTests.a */; };
+		7DFE3767C62A9AE42A9B5FAD /* libPods-StartHack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14E997D8EBF5FA1008958781 /* libPods-StartHack.a */; };
+		877D895B1D41433C0061CDBD /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877D895A1D41433C0061CDBD /* CallViewController.m */; };
+		877D895E1D414A990061CDBD /* AcceptAudioCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877D895D1D414A990061CDBD /* AcceptAudioCallViewController.m */; };
 		D018FB771C9397200028DCE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB761C9397200028DCE6 /* main.m */; };
 		D018FB7A1C9397200028DCE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB791C9397200028DCE6 /* AppDelegate.m */; };
 		D018FB7D1C9397200028DCE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB7C1C9397200028DCE6 /* ViewController.m */; };
@@ -46,8 +50,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08CEA2B8B647C916828D0071 /* libPods-StartHack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StartHack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		35DF0809363B3A5FB5CDA48D /* Pods-StartHack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHack.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartHack/Pods-StartHack.release.xcconfig"; sourceTree = "<group>"; };
+		0ACED50DAE68E552BBE9BB33 /* Pods-StartHackUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHackUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartHackUITests/Pods-StartHackUITests.release.xcconfig"; sourceTree = "<group>"; };
+		14E997D8EBF5FA1008958781 /* libPods-StartHack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StartHack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22D809BB42DE37F65AE2F8CD /* libPods-StartHackTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StartHackTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38E26DE51CB319E1D90A5EB3 /* libPods-StartHackUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StartHackUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		54DAA07F7D0DA477AB0D22CC /* Pods-StartHack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StartHack/Pods-StartHack.debug.xcconfig"; sourceTree = "<group>"; };
+		6F2FB867B3A30EA6C7895C41 /* Pods-StartHackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHackTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartHackTests/Pods-StartHackTests.release.xcconfig"; sourceTree = "<group>"; };
+		877D89591D41433C0061CDBD /* CallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
+		877D895A1D41433C0061CDBD /* CallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallViewController.m; sourceTree = "<group>"; };
+		877D895C1D414A990061CDBD /* AcceptAudioCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcceptAudioCallViewController.h; sourceTree = "<group>"; };
+		877D895D1D414A990061CDBD /* AcceptAudioCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcceptAudioCallViewController.m; sourceTree = "<group>"; };
+		A553A41C18BA48CB7C47BFC2 /* Pods-StartHackUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHackUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StartHackUITests/Pods-StartHackUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D018FB721C9397200028DCE6 /* StartHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StartHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D018FB761C9397200028DCE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D018FB781C9397200028DCE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -83,7 +96,8 @@
 		D0E88E541C94524800EC0FAF /* AcceptCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcceptCallViewController.m; sourceTree = "<group>"; };
 		D0E88E561C94688E00EC0FAF /* ConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationViewController.h; sourceTree = "<group>"; };
 		D0E88E571C94688E00EC0FAF /* ConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationViewController.m; sourceTree = "<group>"; };
-		FD270E1C68FD4521B9BE2D5C /* Pods-StartHack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StartHack/Pods-StartHack.debug.xcconfig"; sourceTree = "<group>"; };
+		D41A4760A646B7584DD9B277 /* Pods-StartHack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHack.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartHack/Pods-StartHack.release.xcconfig"; sourceTree = "<group>"; };
+		F8513F285A5DA93272447898 /* Pods-StartHackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StartHackTests/Pods-StartHackTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3003BB4AECFFD16C570D43AF /* libPods-StartHack.a in Frameworks */,
+				7DFE3767C62A9AE42A9B5FAD /* libPods-StartHack.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E7C6A4675BC8409358201C2 /* libPods-StartHackTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,25 +121,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5419A8E590DDC490FE2FD025 /* libPods-StartHackUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		53DEF008B63B43CB84E5365D /* Pods */ = {
+		67B4C30645907B7FA17DCE1D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FD270E1C68FD4521B9BE2D5C /* Pods-StartHack.debug.xcconfig */,
-				35DF0809363B3A5FB5CDA48D /* Pods-StartHack.release.xcconfig */,
+				54DAA07F7D0DA477AB0D22CC /* Pods-StartHack.debug.xcconfig */,
+				D41A4760A646B7584DD9B277 /* Pods-StartHack.release.xcconfig */,
+				F8513F285A5DA93272447898 /* Pods-StartHackTests.debug.xcconfig */,
+				6F2FB867B3A30EA6C7895C41 /* Pods-StartHackTests.release.xcconfig */,
+				A553A41C18BA48CB7C47BFC2 /* Pods-StartHackUITests.debug.xcconfig */,
+				0ACED50DAE68E552BBE9BB33 /* Pods-StartHackUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		AA367DCDA245E8F01226E688 /* Frameworks */ = {
+		89F2CC55A89490035BCCC0B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				08CEA2B8B647C916828D0071 /* libPods-StartHack.a */,
+				14E997D8EBF5FA1008958781 /* libPods-StartHack.a */,
+				22D809BB42DE37F65AE2F8CD /* libPods-StartHackTests.a */,
+				38E26DE51CB319E1D90A5EB3 /* libPods-StartHackUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,8 +158,8 @@
 				D018FB8E1C9397200028DCE6 /* StartHackTests */,
 				D018FB991C9397200028DCE6 /* StartHackUITests */,
 				D018FB731C9397200028DCE6 /* Products */,
-				53DEF008B63B43CB84E5365D /* Pods */,
-				AA367DCDA245E8F01226E688 /* Frameworks */,
+				67B4C30645907B7FA17DCE1D /* Pods */,
+				89F2CC55A89490035BCCC0B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +185,8 @@
 				D03498CA1C93AD81005190C1 /* LanguagePickerTableViewController.h */,
 				D03498CB1C93AD81005190C1 /* LanguagePickerTableViewController.m */,
 				D018FB7E1C9397200028DCE6 /* Main.storyboard */,
+				877D89591D41433C0061CDBD /* CallViewController.h */,
+				877D895A1D41433C0061CDBD /* CallViewController.m */,
 				D0E88E471C93C59300EC0FAF /* TranslatorMainViewController.h */,
 				D0E88E481C93C59300EC0FAF /* TranslatorMainViewController.m */,
 				D0E88E4A1C93FFB800EC0FAF /* UserMainViewController.h */,
@@ -173,6 +197,8 @@
 				D0E88E4E1C94318D00EC0FAF /* UserSelectLanguageTableViewController.m */,
 				D0E88E531C94524800EC0FAF /* AcceptCallViewController.h */,
 				D0E88E541C94524800EC0FAF /* AcceptCallViewController.m */,
+				877D895C1D414A990061CDBD /* AcceptAudioCallViewController.h */,
+				877D895D1D414A990061CDBD /* AcceptAudioCallViewController.m */,
 				D0E88E561C94688E00EC0FAF /* ConversationViewController.h */,
 				D0E88E571C94688E00EC0FAF /* ConversationViewController.m */,
 				D018FBAF1C93AA4D0028DCE6 /* languages.plist */,
@@ -219,12 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D018FB9F1C9397200028DCE6 /* Build configuration list for PBXNativeTarget "StartHack" */;
 			buildPhases = (
-				3791A2A0DCDD2BA355767AE4 /* Check Pods Manifest.lock */,
+				2EC2FA73475DFE78323BCE8A /* 📦 Check Pods Manifest.lock */,
 				D018FB6E1C9397200028DCE6 /* Sources */,
 				D018FB6F1C9397200028DCE6 /* Frameworks */,
 				D018FB701C9397200028DCE6 /* Resources */,
-				6FE9E3F56F1771B90B7EEDC8 /* Embed Pods Frameworks */,
-				70978180C7DDB32CA307E853 /* Copy Pods Resources */,
+				38A1C3CFD5B8BD6F48E440AE /* 📦 Embed Pods Frameworks */,
+				79E0F09DAC1CBF7B25F1AA1D /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,9 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D018FBA21C9397200028DCE6 /* Build configuration list for PBXNativeTarget "StartHackTests" */;
 			buildPhases = (
+				BDFB8BFC027B2817A110F721 /* 📦 Check Pods Manifest.lock */,
 				D018FB871C9397200028DCE6 /* Sources */,
 				D018FB881C9397200028DCE6 /* Frameworks */,
 				D018FB891C9397200028DCE6 /* Resources */,
+				CE0B04CC1375605F12295E34 /* 📦 Embed Pods Frameworks */,
+				2387C8A615F73B099479B95E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,9 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D018FBA51C9397200028DCE6 /* Build configuration list for PBXNativeTarget "StartHackUITests" */;
 			buildPhases = (
+				8BBDB0BE3ED7AAA8F77F0FFF /* 📦 Check Pods Manifest.lock */,
 				D018FB921C9397200028DCE6 /* Sources */,
 				D018FB931C9397200028DCE6 /* Frameworks */,
 				D018FB941C9397200028DCE6 /* Resources */,
+				5900CBDF5CD5E53F27947898 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -283,6 +314,14 @@
 					D018FB711C9397200028DCE6 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 68X9Z9JMZ9;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					D018FB8A1C9397200028DCE6 = {
 						CreatedOnToolsVersion = 7.3;
@@ -343,14 +382,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3791A2A0DCDD2BA355767AE4 /* Check Pods Manifest.lock */ = {
+		2387C8A615F73B099479B95E /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StartHackTests/Pods-StartHackTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EC2FA73475DFE78323BCE8A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,14 +412,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6FE9E3F56F1771B90B7EEDC8 /* Embed Pods Frameworks */ = {
+		38A1C3CFD5B8BD6F48E440AE /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,19 +427,79 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StartHack/Pods-StartHack-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		70978180C7DDB32CA307E853 /* Copy Pods Resources */ = {
+		5900CBDF5CD5E53F27947898 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StartHackUITests/Pods-StartHackUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79E0F09DAC1CBF7B25F1AA1D /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StartHack/Pods-StartHack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BBDB0BE3ED7AAA8F77F0FFF /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BDFB8BFC027B2817A110F721 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CE0B04CC1375605F12295E34 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StartHackTests/Pods-StartHackTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -399,12 +513,14 @@
 				D018FB7D1C9397200028DCE6 /* ViewController.m in Sources */,
 				D03498CC1C93AD81005190C1 /* LanguagePickerTableViewController.m in Sources */,
 				D03498C91C93AD59005190C1 /* StandardTableViewCell.m in Sources */,
+				877D895B1D41433C0061CDBD /* CallViewController.m in Sources */,
 				D0E88E521C94443100EC0FAF /* SearchingViewController.m in Sources */,
 				D018FB7A1C9397200028DCE6 /* AppDelegate.m in Sources */,
 				D018FBAE1C93A4650028DCE6 /* SelectTypeViewController.m in Sources */,
 				D0E88E4F1C94318D00EC0FAF /* UserSelectLanguageTableViewController.m in Sources */,
 				D0E88E491C93C59300EC0FAF /* TranslatorMainViewController.m in Sources */,
 				D0E88E581C94688E00EC0FAF /* ConversationViewController.m in Sources */,
+				877D895E1D414A990061CDBD /* AcceptAudioCallViewController.m in Sources */,
 				D0E88E4C1C93FFB800EC0FAF /* UserMainViewController.m in Sources */,
 				D018FB771C9397200028DCE6 /* main.m in Sources */,
 			);
@@ -543,7 +659,7 @@
 		};
 		D018FBA01C9397200028DCE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD270E1C68FD4521B9BE2D5C /* Pods-StartHack.debug.xcconfig */;
+			baseConfigurationReference = 54DAA07F7D0DA477AB0D22CC /* Pods-StartHack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -558,7 +674,7 @@
 		};
 		D018FBA11C9397200028DCE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35DF0809363B3A5FB5CDA48D /* Pods-StartHack.release.xcconfig */;
+			baseConfigurationReference = D41A4760A646B7584DD9B277 /* Pods-StartHack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -573,6 +689,7 @@
 		};
 		D018FBA31C9397200028DCE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8513F285A5DA93272447898 /* Pods-StartHackTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = StartHackTests/Info.plist;
@@ -585,6 +702,7 @@
 		};
 		D018FBA41C9397200028DCE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F2FB867B3A30EA6C7895C41 /* Pods-StartHackTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = StartHackTests/Info.plist;
@@ -597,6 +715,7 @@
 		};
 		D018FBA61C9397200028DCE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A553A41C18BA48CB7C47BFC2 /* Pods-StartHackUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = StartHackUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -608,6 +727,7 @@
 		};
 		D018FBA71C9397200028DCE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ACED50DAE68E552BBE9BB33 /* Pods-StartHackUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = StartHackUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
