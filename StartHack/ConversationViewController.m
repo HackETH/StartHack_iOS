@@ -317,6 +317,7 @@
 }
 
 - (IBAction)hangupButtonClicked:(id)sender {
+
     [self.conversation disconnect];
     [self.incomingInvite reject];
     [self.outgoingInvite cancel];

@@ -1,27 +1,27 @@
 PODS:
-  - Bolts/Tasks (1.6.0)
+  - Bolts/Tasks (1.8.4)
   - OneSignal (1.11.3)
-  - Parse (1.12.0):
-    - Bolts/Tasks (~> 1.5)
-  - TwilioCommon (0.2.1)
+  - Parse (1.14.2):
+    - Bolts/Tasks (~> 1.8)
+  - TwilioCommon (0.2.2)
   - TwilioConversationsClient (0.24.1):
     - TwilioCommon (~> 0.2.0)
-  - TwilioSDK (1.2.9)
+  - TwilioSDK (1.2.11)
 
 DEPENDENCIES:
-  - OneSignal
+  - OneSignal (= 1.11.3)
   - Parse
-  - TwilioConversationsClient
+  - TwilioConversationsClient (= 0.24.1)
   - TwilioSDK
 
 SPEC CHECKSUMS:
-  Bolts: f52a250053bb517ca874523c3913776359ab3def
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   OneSignal: 309b636ba56955a427fd1d2544ba4dd52e19fce0
-  Parse: de2c52a9a1421b91ae7594ab8ce191afd184f19b
-  TwilioCommon: a2dbaf7c080c9fa8f69f9a0605be965501c87334
+  Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
+  TwilioCommon: b697446b6f151255c4118f065e959c3dedee44e5
   TwilioConversationsClient: b14e7ad53f315bb3fbd86e4a2c9d3b6c07840739
-  TwilioSDK: 1e342c9e556665815c4a17bf2801c5a505337cc9
+  TwilioSDK: c1efd3b273c243b5a034baa0d29ad370afb893d9
 
-PODFILE CHECKSUM: 77a7d974e1a7c21a7e7c6bdc9114cd9c5ef3fbf6
+PODFILE CHECKSUM: 6f374fcd227d7b7f4eb63a6ccff7917eaef5d803
 
 COCOAPODS: 1.0.0

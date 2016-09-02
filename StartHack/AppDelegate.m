@@ -12,7 +12,8 @@
 #import "ConversationViewController.h"
 #import <TwilioConversationsClient/TwilioConversationsClient.h>
 #import "AcceptAudioCallViewController.h"
-
+#import "TranslatorMainViewController.h"
+#import "CallViewController.h"
 @interface AppDelegate () 
 
 
@@ -37,18 +38,21 @@
                                                    NSLog(@"additionalData: %@", additionalData);
                                                    PFUser *user = [PFUser currentUser];
                                                    if (![user[@"twilioIdentity"] isEqualToString:additionalData[@"twilioId"]] || ![user.objectId isEqualToString:additionalData[@"reachMeHere"]]) {
-                                                       UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
-                                                                                                            bundle:nil];
-                                                       AcceptAudioCallViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"AcceptAudioCall"];
+                                                       if (additionalData[@"helpRequest"] && [((UINavigationController*)self.window.rootViewController).visibleViewController.restorationIdentifier isEqualToString: @"TranslatorMain"]) {
+                                                           UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                                                                bundle:nil];
+                                                           AcceptAudioCallViewController *add = [storyboard instantiateViewControllerWithIdentifier:@"AcceptAudioCall"];
+                                                           
+                                                           //TranslatorMainViewController *main = [storyboard instantiateViewControllerWithIdentifier:@"TranslatorMain"];
+                                                           
+                                                           add.reachHere =additionalData[@"reachMeHere"];
+                                                           
+                                                           
+                                                           
+                                                           //[(UINavigationController *)self.window.rootViewController pushViewController:main animated:YES];
+                                                           [(UINavigationController *)self.window.rootViewController pushViewController:add animated:NO];
+                                                       }
                                                        
-                                                       
-                                                       
-                                                       add.reachHere =additionalData[@"reachMeHere"];
-                                                       
-                                                       
-                                                       
-                                                       
-                                                       [(UINavigationController *)self.window.rootViewController pushViewController:add animated:NO];
                                                    }
                                                    
                                                    
@@ -71,7 +75,32 @@
     return YES;
 }
 
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSDictionary *additionalData = userInfo[@"custom"][@"a"];
+    NSLog(@"%@",userInfo);
+    if (additionalData[@"deleteAll"]) {
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        completionHandler(UIBackgroundFetchResultNewData);
+    }else if (additionalData[@"helpRequest"]){
+        PFUser *user = [PFUser currentUser];
+        [user incrementKey:@"timesCalled"];
+        [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                completionHandler(UIBackgroundFetchResultNewData);
 
+            }else{
+                completionHandler(UIBackgroundFetchResultFailed);
+            }
+        }];
+    }else{
+        completionHandler(UIBackgroundFetchResultNoData);
+    }
+    
+    
+}
 
 
 
@@ -83,6 +112,9 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    if ([((UINavigationController*)self.window.rootViewController).visibleViewController.restorationIdentifier isEqualToString: @"Call"]) {
+        [((CallViewController *)((UINavigationController*)self.window.rootViewController).visibleViewController) enteredBackground];
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

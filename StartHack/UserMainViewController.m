@@ -11,11 +11,24 @@
 #import "SearchingViewController.h"
 #import <Parse/Parse.h>
 #import "CallViewController.h"
+#import <sys/utsname.h>
 
+NSString* deviceName()
+{
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    
+    return [NSString stringWithCString:systemInfo.machine
+                              encoding:NSUTF8StringEncoding];
+}
 @interface UserMainViewController ()
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *firstSecondLanguageDistance;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *hiDescriptionDistance;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *descriptionFirstLanguageDistance;
 @property (weak, nonatomic) IBOutlet UIButton *makeCallButton;
-@property (weak, nonatomic) IBOutlet UILabel *firstLanguageLabel;
-@property (weak, nonatomic) IBOutlet UILabel *secondLanguageLabel;
+@property (weak, nonatomic) IBOutlet UIButton *firstLanguageButton;
+@property (weak, nonatomic) IBOutlet UIButton *secondLanguageButton;
+
 @property (nonatomic) NSString *token;
 
 
@@ -27,6 +40,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if ([deviceName() isEqualToString:@"iPhone4,1" ]) {
+        _hiDescriptionDistance.constant = 8;
+        _descriptionFirstLanguageDistance.constant = 8;
+        _firstSecondLanguageDistance.constant = 8;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -47,10 +65,12 @@
     self.secondLanguage = user[@"secondLanguage"];
     
     if (self.firstLanguage) {
-        self.firstLanguageLabel.text = self.firstLanguage;
+        [_firstLanguageButton setTitle:self.firstLanguage forState:UIControlStateNormal];
+        
     }
     if (self.secondLanguage) {
-        self.secondLanguageLabel.text = self.secondLanguage;
+        [_secondLanguageButton setTitle:self.secondLanguage forState:UIControlStateNormal];
+        
     }
     
     if (self.firstLanguage && self.secondLanguage) self.makeCallButton.enabled = true;

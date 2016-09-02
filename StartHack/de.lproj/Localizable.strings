@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  
+
+  Created by Samuel Mueller on 08.08.16.
+
+*/
+
+"Requesting Translator... Don't close the app." = "Suche Übersetzer... App nicht schliessen.";
+"Please, try again" = "Probier es noch einmal";
+
+"No one answered your call" = "Kein Übersetzer ist verfügbar";
+
+"In Call" = "In einem Anruf";
+"No connection was established" = "Es wurde keine Verbindung aufgebaut";
+"The phone seems to have no internet connection" = "Das Telefon scheint nicht mit dem Internet verbunden zu sein";

@@ -79,7 +79,7 @@
     if (self.isFirst) user[@"firstLanguage"] = language[@"language_name"];
     else user[@"secondLanguage"] = language[@"language_name"];
     
-    [[self navigationController] setNavigationBarHidden:YES animated:NO];
+    [[self navigationController] setNavigationBarHidden:YES animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

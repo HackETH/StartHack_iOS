@@ -11,6 +11,8 @@
 #import <Parse/Parse.h>
 
 @interface AcceptAudioCallViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *takeButton;
+@property (weak, nonatomic) IBOutlet UIButton *declineButton;
 
 @end
 
@@ -20,11 +22,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+
     NSString *urlString = [NSString stringWithFormat:@"https://helpingvoice.herokuapp.com/token?client=%@", [PFUser currentUser].objectId];
     NSURL *url = [NSURL URLWithString:urlString];
     NSError *error = nil;
     _token = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
 
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    CALayer * l1 = [_takeButton layer];
+    [l1 setMasksToBounds:YES];
+    [l1 setCornerRadius:l1.bounds.size.height/2.0f];
+    l1 = [_declineButton layer];
+    [l1 setMasksToBounds:YES];
+    [l1 setCornerRadius:l1.bounds.size.height/2.0f];
+    [UIView animateWithDuration:1 animations:^{
+        _takeButton.hidden = NO;
+        _declineButton.hidden = NO;
+    }];
 }
 - (IBAction)takeCallPressed:(id)sender {
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
@@ -33,9 +50,8 @@
     add.token = _token;
     add.needsHelp = false;
     add.reachHere = self.reachHere;
-    [self presentViewController:add animated:NO completion:^{
-        
-    }];
+    [self.navigationController pushViewController:add animated:NO];
+    
 }
 - (IBAction)declineCallPressed:(id)sender {
     [self.navigationController popViewControllerAnimated:NO];

@@ -15,4 +15,7 @@
 @property () NSString *token;
 @property () NSString *reachHere;
 @property () bool needsHelp;
+@property (weak, nonatomic) IBOutlet UILabel *informationLabel;
+@property () NSMutableArray *userIdsToConnectWith;
+-(void)enteredBackground;
 @end

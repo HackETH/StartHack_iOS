@@ -10,8 +10,11 @@
 		5419A8E590DDC490FE2FD025 /* libPods-StartHackUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E26DE51CB319E1D90A5EB3 /* libPods-StartHackUITests.a */; };
 		5E7C6A4675BC8409358201C2 /* libPods-StartHackTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D809BB42DE37F65AE2F8CD /* libPods-StartHackTests.a */; };
 		7DFE3767C62A9AE42A9B5FAD /* libPods-StartHack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14E997D8EBF5FA1008958781 /* libPods-StartHack.a */; };
+		870919941D56500A00C37EAA /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 870919931D56500A00C37EAA /* beep.mp3 */; };
+		873739911D551F8100C69440 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873739901D551F8100C69440 /* RateViewController.m */; };
 		877D895B1D41433C0061CDBD /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877D895A1D41433C0061CDBD /* CallViewController.m */; };
 		877D895E1D414A990061CDBD /* AcceptAudioCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877D895D1D414A990061CDBD /* AcceptAudioCallViewController.m */; };
+		87C080321D58B8760085896C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87C080341D58B8760085896C /* Localizable.strings */; };
 		D018FB771C9397200028DCE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB761C9397200028DCE6 /* main.m */; };
 		D018FB7A1C9397200028DCE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB791C9397200028DCE6 /* AppDelegate.m */; };
 		D018FB7D1C9397200028DCE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB7C1C9397200028DCE6 /* ViewController.m */; };
@@ -56,10 +59,34 @@
 		38E26DE51CB319E1D90A5EB3 /* libPods-StartHackUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StartHackUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54DAA07F7D0DA477AB0D22CC /* Pods-StartHack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StartHack/Pods-StartHack.debug.xcconfig"; sourceTree = "<group>"; };
 		6F2FB867B3A30EA6C7895C41 /* Pods-StartHackTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHackTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StartHackTests/Pods-StartHackTests.release.xcconfig"; sourceTree = "<group>"; };
+		870919931D56500A00C37EAA /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
+		8720F3FC1D58A16F00EA7DEA /* libBolts.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBolts.a; path = "../../Library/Developer/Xcode/DerivedData/StartHack-ayoqvkzczhethocsyulmbqnhfkzm/Build/Products/Debug-iphonesimulator/Bolts/libBolts.a"; sourceTree = "<group>"; };
+		8720F3FE1D58A18100EA7DEA /* libParse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libParse.a; path = "../../Library/Developer/Xcode/DerivedData/StartHack-ayoqvkzczhethocsyulmbqnhfkzm/Build/Products/Debug-iphonesimulator/Parse/libParse.a"; sourceTree = "<group>"; };
+		8737398F1D551F8100C69440 /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
+		873739901D551F8100C69440 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
 		877D89591D41433C0061CDBD /* CallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
 		877D895A1D41433C0061CDBD /* CallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallViewController.m; sourceTree = "<group>"; };
 		877D895C1D414A990061CDBD /* AcceptAudioCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcceptAudioCallViewController.h; sourceTree = "<group>"; };
 		877D895D1D414A990061CDBD /* AcceptAudioCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcceptAudioCallViewController.m; sourceTree = "<group>"; };
+		878214AA1D58AB5200FBF1FC /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		87C080331D58B8760085896C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		87C080361D58B8800085896C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		87C080371D58BAF70085896C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		87C080381D58BAF70085896C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		87C080391D58BAF70085896C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		87C0803A1D58BB300085896C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
+		87C0803B1D58BB310085896C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		87C0803C1D58BB310085896C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		87C0803D1D58BB3D0085896C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		87C0803E1D58BB3D0085896C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		87C0803F1D58BB3D0085896C /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		87C080401D58BB7E0085896C /* sq */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sq; path = sq.lproj/Main.strings; sourceTree = "<group>"; };
+		87C080411D58BB7E0085896C /* sq */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sq; path = sq.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		87C080421D58BB7E0085896C /* sq */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sq; path = sq.lproj/Localizable.strings; sourceTree = "<group>"; };
+		87C080431D58BCB90085896C /* ps */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ps; path = ps.lproj/Main.strings; sourceTree = "<group>"; };
+		87C080441D58BCB90085896C /* ps */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ps; path = ps.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		87C080451D58BCB90085896C /* ps */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ps; path = ps.lproj/Localizable.strings; sourceTree = "<group>"; };
+		87C83F5D1D78754A001C255D /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		A553A41C18BA48CB7C47BFC2 /* Pods-StartHackUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StartHackUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StartHackUITests/Pods-StartHackUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D018FB721C9397200028DCE6 /* StartHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StartHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D018FB761C9397200028DCE6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -144,6 +171,8 @@
 		89F2CC55A89490035BCCC0B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8720F3FE1D58A18100EA7DEA /* libParse.a */,
+				8720F3FC1D58A16F00EA7DEA /* libBolts.a */,
 				14E997D8EBF5FA1008958781 /* libPods-StartHack.a */,
 				22D809BB42DE37F65AE2F8CD /* libPods-StartHackTests.a */,
 				38E26DE51CB319E1D90A5EB3 /* libPods-StartHackUITests.a */,
@@ -176,6 +205,8 @@
 		D018FB741C9397200028DCE6 /* StartHack */ = {
 			isa = PBXGroup;
 			children = (
+				87C080341D58B8760085896C /* Localizable.strings */,
+				870919931D56500A00C37EAA /* beep.mp3 */,
 				D018FB781C9397200028DCE6 /* AppDelegate.h */,
 				D018FB791C9397200028DCE6 /* AppDelegate.m */,
 				D018FB7B1C9397200028DCE6 /* ViewController.h */,
@@ -185,6 +216,8 @@
 				D03498CA1C93AD81005190C1 /* LanguagePickerTableViewController.h */,
 				D03498CB1C93AD81005190C1 /* LanguagePickerTableViewController.m */,
 				D018FB7E1C9397200028DCE6 /* Main.storyboard */,
+				8737398F1D551F8100C69440 /* RateViewController.h */,
+				873739901D551F8100C69440 /* RateViewController.m */,
 				877D89591D41433C0061CDBD /* CallViewController.h */,
 				877D895A1D41433C0061CDBD /* CallViewController.m */,
 				D0E88E471C93C59300EC0FAF /* TranslatorMainViewController.h */,
@@ -340,6 +373,12 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				fr,
+				sv,
+				ar,
+				sq,
+				ps,
 			);
 			mainGroup = D018FB691C9397200028DCE6;
 			productRefGroup = D018FB731C9397200028DCE6 /* Products */;
@@ -359,8 +398,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D018FBB01C93AA4D0028DCE6 /* languages.plist in Resources */,
+				87C080321D58B8760085896C /* Localizable.strings in Resources */,
 				D018FB851C9397200028DCE6 /* LaunchScreen.storyboard in Resources */,
 				D018FB821C9397200028DCE6 /* Assets.xcassets in Resources */,
+				870919941D56500A00C37EAA /* beep.mp3 in Resources */,
 				D018FB801C9397200028DCE6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +555,7 @@
 				D03498CC1C93AD81005190C1 /* LanguagePickerTableViewController.m in Sources */,
 				D03498C91C93AD59005190C1 /* StandardTableViewCell.m in Sources */,
 				877D895B1D41433C0061CDBD /* CallViewController.m in Sources */,
+				873739911D551F8100C69440 /* RateViewController.m in Sources */,
 				D0E88E521C94443100EC0FAF /* SearchingViewController.m in Sources */,
 				D018FB7A1C9397200028DCE6 /* AppDelegate.m in Sources */,
 				D018FBAE1C93A4650028DCE6 /* SelectTypeViewController.m in Sources */,
@@ -558,10 +600,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		87C080341D58B8760085896C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87C080331D58B8760085896C /* Base */,
+				87C080361D58B8800085896C /* de */,
+				87C080391D58BAF70085896C /* fr */,
+				87C0803C1D58BB310085896C /* sv */,
+				87C0803F1D58BB3D0085896C /* ar */,
+				87C080421D58BB7E0085896C /* sq */,
+				87C080451D58BCB90085896C /* ps */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		D018FB7E1C9397200028DCE6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D018FB7F1C9397200028DCE6 /* Base */,
+				87C080371D58BAF70085896C /* fr */,
+				87C0803A1D58BB300085896C /* sv */,
+				87C0803D1D58BB3D0085896C /* ar */,
+				87C080401D58BB7E0085896C /* sq */,
+				87C080431D58BCB90085896C /* ps */,
+				87C83F5D1D78754A001C255D /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -570,6 +632,12 @@
 			isa = PBXVariantGroup;
 			children = (
 				D018FB841C9397200028DCE6 /* Base */,
+				878214AA1D58AB5200FBF1FC /* de */,
+				87C080381D58BAF70085896C /* fr */,
+				87C0803B1D58BB310085896C /* sv */,
+				87C0803E1D58BB3D0085896C /* ar */,
+				87C080411D58BB7E0085896C /* sq */,
+				87C080441D58BCB90085896C /* ps */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -669,6 +737,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mueller.StartHack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
+				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -684,6 +754,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mueller.StartHack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
+				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s i386";
 			};
 			name = Release;
 		};

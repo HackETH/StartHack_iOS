@@ -11,8 +11,8 @@ platform :ios, '9.0'
 target 'StartHack' do
     
     pod 'Parse'
-    pod 'OneSignal'
-    pod 'TwilioConversationsClient'
+    pod 'OneSignal', '1.11.3'
+    pod 'TwilioConversationsClient', '0.24.1'
     pod 'TwilioSDK'
 
 end

@@ -1,0 +1,143 @@
+
+"test" = "hola";
+
+"Requesting Translator... Don't close the app." = "Suche Übersetzer... App nicht schliessen.";
+/* Class = "UILabel"; text = "or"; ObjectID = "1OF-P0-CpT"; */
+"1OF-P0-CpT.text" = "oder";
+
+/* Class = "UILabel"; text = "I speak"; ObjectID = "2AZ-up-gjA"; */
+"2AZ-up-gjA.text" = "Ich spreche";
+
+/* Class = "UINavigationItem"; title = "Languages"; ObjectID = "2Ji-ff-rCx"; */
+"2Ji-ff-rCx.title" = "Sprachen";
+
+/* Class = "UILabel"; text = "You're all set now. We will send you a Notification when someone needs your help."; ObjectID = "8Vg-hb-QFm"; */
+"8Vg-hb-QFm.text" = "Du bist nun bereit. Du kannst die App schliessen. Wir senden dir eine Notification, wenn jemand deine Hilfe braucht.";
+
+/* Class = "UIButton"; normalTitle = "Call wasn't helpful!\n"; ObjectID = "9hB-W5-RYF"; */
+"9hB-W5-RYF.normalTitle" = "Der Anruf war nicht hilfreich\n";
+
+/* Class = "UILabel"; text = "Why wasn't the call helpful?"; ObjectID = "E78-Nz-igq"; */
+"E78-Nz-igq.text" = "Warum war der Anruf nicht hilfreich?";
+
+/* Class = "UILabel"; text = "Select the language you speak & the language you need help with and then make the call."; ObjectID = "GmK-oH-lHC"; */
+"GmK-oH-lHC.text" = "Wähle die Sprache, welche du sprichst und die mit der Du hilfe brauchst.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HDv-xr-U8w"; */
+"HDv-xr-U8w.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Test Bewerten"; ObjectID = "HX0-WO-4CB"; */
+"HX0-WO-4CB.normalTitle" = "Test Bewerten";
+
+/* Class = "UIButton"; normalTitle = "take"; ObjectID = "HkK-Ej-Iic"; */
+"HkK-Ej-Iic.normalTitle" = "auswählen";
+
+/* Class = "UILabel"; text = "..."; ObjectID = "HyM-vC-LQq"; */
+"HyM-vC-LQq.text" = "...";
+
+/* Class = "UILabel"; text = "Hi"; ObjectID = "I7N-FO-y4h"; */
+"I7N-FO-y4h.text" = "Hallo";
+
+/* Class = "UILabel"; text = "Connecting"; ObjectID = "IT9-Ks-F2y"; */
+"IT9-Ks-F2y.text" = "Verbindet";
+
+/* Class = "UILabel"; text = "Why wasn't the call nice?"; ObjectID = "La7-zd-IMC"; */
+"La7-zd-IMC.text" = "Warum war der Anruf nicht angenehm?";
+
+/* Class = "UILabel"; text = "I need help with"; ObjectID = "MFa-3Z-U9I"; */
+"MFa-3Z-U9I.text" = "Ich brauche Hilfe mit";
+
+/* Class = "UILabel"; text = "Thank you!"; ObjectID = "N5o-mR-hLr"; */
+"N5o-mR-hLr.text" = "Danke!";
+
+/* Class = "UILabel"; text = "Select all the languages you are fluent in."; ObjectID = "QT9-di-ndZ"; */
+"QT9-di-ndZ.text" = "Wähle die Sprachen welche du flüssig sprichst.";
+
+/* Class = "UIButton"; normalTitle = "Call was helpful"; ObjectID = "R1E-7Y-Tun"; */
+"R1E-7Y-Tun.normalTitle" = "Der Anruf war hilfreich";
+
+/* Class = "UIButton"; normalTitle = "Toggle Loud"; ObjectID = "ZaS-Pq-JCM"; */
+"ZaS-Pq-JCM.normalTitle" = "Lautsprecher";
+
+/* Class = "UIButton"; normalTitle = "Call"; ObjectID = "aDI-We-fsX"; */
+"aDI-We-fsX.normalTitle" = "Anrufen";
+
+/* Class = "UILabel"; text = "Please, describe why it was not helpful or select other"; ObjectID = "bfD-yj-mdI"; */
+"bfD-yj-mdI.text" = "Bitte beschreibe warum der Anruf nicht hilfreich war.";
+
+/* Class = "UIButton"; normalTitle = "Tap to select..."; ObjectID = "cQG-GT-qKC"; */
+"cQG-GT-qKC.normalTitle" = "Tippe zum Auswählen an...";
+
+/* Class = "UIButton"; normalTitle = "Call wasn't helpful!\n"; ObjectID = "f7C-MT-CUK"; */
+"f7C-MT-CUK.normalTitle" = "Der Anruf war nicht hilfreich!\n";
+
+/* Class = "UILabel"; text = "Helping Voice"; ObjectID = "fkx-ez-HDQ"; */
+"fkx-ez-HDQ.text" = "Helping Voice";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gnD-5m-Cpc"; */
+"gnD-5m-Cpc.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "I wan't to be a Translator"; ObjectID = "iaA-6b-m8c"; */
+"iaA-6b-m8c.normalTitle" = "Ich will anderen helfen.";
+
+/* Class = "UIButton"; normalTitle = "Call was helpful"; ObjectID = "jna-me-d3L"; */
+"jna-me-d3L.normalTitle" = "Der Anruf war hilfreich";
+
+/* Class = "UIButton"; normalTitle = "Mute"; ObjectID = "joQ-wD-IZO"; */
+"joQ-wD-IZO.normalTitle" = "Stumm";
+
+/* Class = "UILabel"; text = "Welcome"; ObjectID = "kB9-uj-qdh"; */
+"kB9-uj-qdh.text" = "Wilkommen";
+
+/* Class = "UIButton"; normalTitle = "decline"; ObjectID = "kJr-s5-dXK"; */
+"kJr-s5-dXK.normalTitle" = "Ablehnen";
+
+/* Class = "UILabel"; text = "to"; ObjectID = "lbi-Ck-tuZ"; */
+"lbi-Ck-tuZ.text" = "an";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "mk4-Bd-9vX"; */
+"mk4-Bd-9vX.normalTitle" = "Speichern";
+
+/* Class = "UILabel"; text = "Connecting"; ObjectID = "p64-uG-7s6"; */
+"p64-uG-7s6.text" = "Verbindet";
+
+/* Class = "UIButton"; normalTitle = "Tap to select..."; ObjectID = "qJS-Ru-W9E"; */
+"qJS-Ru-W9E.normalTitle" = "Tippe zum Auswählen an...";
+
+/* Class = "UIButton"; normalTitle = "Hang Up"; ObjectID = "qOa-Cw-T7b"; */
+"qOa-Cw-T7b.normalTitle" = "Auflegen";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qtW-85-3UX"; */
+"qtW-85-3UX.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "I need help"; ObjectID = "rT6-9D-7J2"; */
+"rT6-9D-7J2.normalTitle" = "Ich brauche Hilfe";
+
+/* Class = "UILabel"; text = "Please, describe why it was not helpful or select other"; ObjectID = "s5U-Ng-qXS"; */
+"s5U-Ng-qXS.text" = "Bitte beschreibe warum der Anruf nicht hilfreich war.";
+
+/* Class = "UILabel"; text = "Connecting"; ObjectID = "wd5-GG-hh2"; */
+"wd5-GG-hh2.text" = "Verbindet";
+
+/* Class = "UINavigationItem"; title = "Select Language"; ObjectID = "x1B-VZ-l6H"; */
+"x1B-VZ-l6H.title" = "Wähl eine Sprache";
+
+/* Class = "UIButton"; normalTitle = "Edit Languages"; ObjectID = "x8U-Nb-r2F"; */
+"x8U-Nb-r2F.normalTitle" = "Sprachen bearbeiten";
+
+/* Class = "UILabel"; text = "Select if you need help with translation or you want to help other people by being a translator."; ObjectID = "ypo-6v-uol"; */
+"ypo-6v-uol.text" = "Möchtest du Geflüchteten helfen, brauchst du Hilfe als Geflüchteter oder brauchst du Hilfe bei der Arbeit mit Geflüchteten?";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "za3-98-vXh"; */
+"za3-98-vXh.text" = "Label";
+
+/* Class = "UILabel"; text = "Searching"; ObjectID = "zdO-Uz-Ycf"; */
+"zdO-Uz-Ycf.text" = "Sucht";
+
+/* Class = "UILabel"; text = "We're currently searching for a translator..."; ObjectID = "ziM-cb-oYr"; */
+"ziM-cb-oYr.text" = "Wir suchen nach einem Übersetzer...";
+
+
+/* Class = "UILabel"; text = "This function will be enabled once there are enough helpers signed up"; ObjectID = "zef-ht-wM5"; */
+"zef-ht-wM5.text" = "Diese Funktion wird aktiviert sobald sich genügend Freiwillige angemeldet haben";
+
