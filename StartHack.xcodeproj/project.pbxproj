@@ -12,6 +12,7 @@
 		7DFE3767C62A9AE42A9B5FAD /* libPods-StartHack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14E997D8EBF5FA1008958781 /* libPods-StartHack.a */; };
 		870919941D56500A00C37EAA /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 870919931D56500A00C37EAA /* beep.mp3 */; };
 		873739911D551F8100C69440 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873739901D551F8100C69440 /* RateViewController.m */; };
+		877D795E1D96D5A20018B1ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 877D795D1D96D5A20018B1ED /* Assets.xcassets */; };
 		877D895B1D41433C0061CDBD /* CallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877D895A1D41433C0061CDBD /* CallViewController.m */; };
 		877D895E1D414A990061CDBD /* AcceptAudioCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877D895D1D414A990061CDBD /* AcceptAudioCallViewController.m */; };
 		87C080321D58B8760085896C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87C080341D58B8760085896C /* Localizable.strings */; };
@@ -19,7 +20,6 @@
 		D018FB7A1C9397200028DCE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB791C9397200028DCE6 /* AppDelegate.m */; };
 		D018FB7D1C9397200028DCE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB7C1C9397200028DCE6 /* ViewController.m */; };
 		D018FB801C9397200028DCE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D018FB7E1C9397200028DCE6 /* Main.storyboard */; };
-		D018FB821C9397200028DCE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D018FB811C9397200028DCE6 /* Assets.xcassets */; };
 		D018FB851C9397200028DCE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D018FB831C9397200028DCE6 /* LaunchScreen.storyboard */; };
 		D018FB901C9397200028DCE6 /* StartHackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB8F1C9397200028DCE6 /* StartHackTests.m */; };
 		D018FB9B1C9397200028DCE6 /* StartHackUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D018FB9A1C9397200028DCE6 /* StartHackUITests.m */; };
@@ -64,6 +64,7 @@
 		8720F3FE1D58A18100EA7DEA /* libParse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libParse.a; path = "../../Library/Developer/Xcode/DerivedData/StartHack-ayoqvkzczhethocsyulmbqnhfkzm/Build/Products/Debug-iphonesimulator/Parse/libParse.a"; sourceTree = "<group>"; };
 		8737398F1D551F8100C69440 /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
 		873739901D551F8100C69440 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
+		877D795D1D96D5A20018B1ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		877D89591D41433C0061CDBD /* CallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallViewController.h; sourceTree = "<group>"; };
 		877D895A1D41433C0061CDBD /* CallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallViewController.m; sourceTree = "<group>"; };
 		877D895C1D414A990061CDBD /* AcceptAudioCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcceptAudioCallViewController.h; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		D018FB7B1C9397200028DCE6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D018FB7C1C9397200028DCE6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D018FB7F1C9397200028DCE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D018FB811C9397200028DCE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D018FB841C9397200028DCE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D018FB861C9397200028DCE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D018FB8B1C9397200028DCE6 /* StartHackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StartHackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				87C080341D58B8760085896C /* Localizable.strings */,
+				877D795D1D96D5A20018B1ED /* Assets.xcassets */,
 				870919931D56500A00C37EAA /* beep.mp3 */,
 				D018FB781C9397200028DCE6 /* AppDelegate.h */,
 				D018FB791C9397200028DCE6 /* AppDelegate.m */,
@@ -235,7 +236,6 @@
 				D0E88E561C94688E00EC0FAF /* ConversationViewController.h */,
 				D0E88E571C94688E00EC0FAF /* ConversationViewController.m */,
 				D018FBAF1C93AA4D0028DCE6 /* languages.plist */,
-				D018FB811C9397200028DCE6 /* Assets.xcassets */,
 				D018FB831C9397200028DCE6 /* LaunchScreen.storyboard */,
 				D018FB861C9397200028DCE6 /* Info.plist */,
 				D018FB751C9397200028DCE6 /* Supporting Files */,
@@ -400,8 +400,8 @@
 				D018FBB01C93AA4D0028DCE6 /* languages.plist in Resources */,
 				87C080321D58B8760085896C /* Localizable.strings in Resources */,
 				D018FB851C9397200028DCE6 /* LaunchScreen.storyboard in Resources */,
-				D018FB821C9397200028DCE6 /* Assets.xcassets in Resources */,
 				870919941D56500A00C37EAA /* beep.mp3 in Resources */,
+				877D795E1D96D5A20018B1ED /* Assets.xcassets in Resources */,
 				D018FB801C9397200028DCE6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
